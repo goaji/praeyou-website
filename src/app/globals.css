@@ -10,6 +10,8 @@
 @theme inline {
   --font-serif: var(--font-serif);
   --font-sans: var(--font-sans);
+  --font-hero: var(--font-hero);
+
 }
 
 body {
