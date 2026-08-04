@@ -3,6 +3,7 @@
 import { motion } from "framer-motion";
 import Image from "next/image";
 import Header from "./Header";
+import Button from "./Button";
 
 
 export default function Hero() {
@@ -58,12 +59,7 @@ export default function Hero() {
             </div>
 
             <div className="relative z-10 flex justify-center pb-14">
-                <a
-                    href="#kontakt"
-                    className="text-[14px] tracking-wide text-cream bg-terracotta border border-terracotta px-8 py-4 rounded-sm"
-                >
-                    Termin anfragen
-                </a>
+                <Button buttonText="Termin anfragen" link="/#kontakt" />
             </div>
         </section>
     );
