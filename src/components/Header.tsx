@@ -8,8 +8,8 @@ type HeaderProps = {
 const navLinkBase = "text-[15px] tracking-wide";
 
 export default function Header({ activeLink = 'home' }: HeaderProps) {
-    const textColor = "text-ink";
-    const wrapperClasses = "sticky top-0 z-50 flex items-center justify-between px-14 py-5 bg-cream/95 backdrop-blur-sm border-b border-ink/10";
+    const textColor = "text-cream";
+    const wrapperClasses = "relative z-10 flex items-center justify-between px-14 py-8";
 
     const linkClass = (key: string) =>
         activeLink === key
@@ -26,7 +26,6 @@ export default function Header({ activeLink = 'home' }: HeaderProps) {
                     height={38}
                     className="w-10 h-auto shrink-0"
                 />
-                <span className="font-logo text-ink">PraeYou</span>
             </Link>
             <nav className={`flex items-center gap-9 ${navLinkBase}`}>
                 <Link href="/" className={linkClass("home")}>Home</Link>
