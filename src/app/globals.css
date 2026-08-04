@@ -5,6 +5,9 @@
   --color-ink: #2e2f26;
   --color-body: #4a4b3f;
   --color-gold: #c2a15f;
+  --color-leaf1:#c7cdb0;
+  --color-leaf2:#faf7f1;
+  --color-elipse: #c2a15f;
 }
 
 @theme inline {

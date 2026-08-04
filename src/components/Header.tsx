@@ -1,5 +1,5 @@
 import Link from "next/link";
-import Image from "next/image";
+import LogoName from "./LogoName";
 
 type HeaderProps = {
     activeLink?: "home" | "uber" | "leistungen" | "praxis" | "kontakt"
@@ -19,13 +19,7 @@ export default function Header({ activeLink = 'home' }: HeaderProps) {
     return (
         <header className={wrapperClasses}>
             <Link href="/" className={textColor}>
-                <Image
-                    src="/logo.svg"
-                    alt="PraeYou Logo"
-                    width={38}
-                    height={38}
-                    className="w-10 h-auto shrink-0"
-                />
+                <LogoName />
             </Link>
             <nav className={`flex items-center gap-9 ${navLinkBase}`}>
                 <Link href="/" className={linkClass("home")}>Home</Link>
