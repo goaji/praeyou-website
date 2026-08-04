@@ -13,7 +13,7 @@ export default function LogoName({ variant = "light" }: LogoNameProps) {
                 <span className={`font-logo font-semibold tracking-wider uppercase text-2xl ${textColor}`}>
                     PRÄ
                 </span>
-                <LogoY />
+                <LogoY variant={variant} />
                 <span className={`font-logo font-semibold tracking-wider uppercase text-2xl ${textColor}`}>
                     OU
                 </span>
