@@ -23,7 +23,7 @@ export default function Hero() {
                         "linear-gradient(180deg, rgba(20,21,14,0.45) 0%, rgba(20,21,14,0.25) 30%, rgba(20,21,14,0.35) 70%, rgba(20,21,14,0.65) 100%)",
                 }}
             />
-            <div className="relative z-10">
+            <div className="relative z-50">
                 <Header />
             </div>
 
