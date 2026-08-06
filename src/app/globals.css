@@ -8,7 +8,8 @@
   --color-leaf1:#c7cdb0;
   --color-leaf2:#faf7f1;
   --color-elipse: #c2a15f;
-  --color-olive: #2e3324
+  --color-olive: #2e3324;
+  --color-red: #b36a45
 }
 
 @theme inline {

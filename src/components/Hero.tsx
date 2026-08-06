@@ -39,7 +39,7 @@ export default function Hero() {
                     initial={{ opacity: 0, y: 14 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 2.5, ease: "easeOut" }}
-                    className="max-w-xl mb-7 text-[17px] leading-relaxed text-[#f3f0e4]"
+                    className="max-w-xl mb-7 text-[17px] leading-relaxed text-white"
                     style={{ textShadow: "0 2px 10px rgba(0,0,0,0.55)" }}
                 >
                     Jeder Tag verlangt deinem Körper etwas ab — Verspannungen, Stress, zu
@@ -59,7 +59,7 @@ export default function Hero() {
             </div>
 
             <div className="relative z-10 flex justify-center pb-14">
-                <Button buttonText="Termin anfragen" link="/#kontakt" />
+                <Button backgroundColor="bg-red" border="border-red" buttonText="Termin anfragen" link="/#kontakt" />
             </div>
         </section>
     );

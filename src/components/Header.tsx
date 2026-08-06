@@ -7,10 +7,11 @@ import { useEffect, useState } from "react";
 
 type HeaderProps = {
     activeLink?: "home" | "uber" | "leistungen" | "praxis" | "kontakt"
+    background?: "light" | "dark"
 };
 
 
-export default function Header({ activeLink = 'home' }: HeaderProps) {
+export default function Header({ activeLink = 'home', background = "dark" }: HeaderProps) {
     const [scrolled, setScrolled] = useState(false);
 
     useEffect(() => {
@@ -20,28 +21,38 @@ export default function Header({ activeLink = 'home' }: HeaderProps) {
         return () => window.removeEventListener("scroll", onScroll);
     }, []);
 
-    const textColor = scrolled ? "text-ink" : "text-cream";
+    const isTransparent = background === "dark" && !scrolled;
 
-    const wrapperClasses = scrolled ? "bg-cream/80 backdrop-blur-sm border-b border-ink/10 py-4" : "bg-transparent py-8";
+    const textColor = isTransparent ? "text-cream" : "text-ink";
 
-    const linkClass = (key: string) =>
-        activeLink === key
-            ? "text-gold border-b border-gold pb-0.5"
+    const wrapperClasses = isTransparent ? "bg-transparent py-8" : "bg-cream/80 backdrop-blur-sm py-4";
+
+    const getHeaderMenuClass = (key: string) => {
+        const activeLinkTextColor = isTransparent ? "text-gold" : "text-red";
+        const classToApply = activeLink === key
+            ? `${activeLinkTextColor} border-b border-gold pb-0.5`
             : `${textColor}`;
+        return classToApply;
+    }
+
+    const buttonBackgroundColor = isTransparent ? "bg-red" : "bg-olive";
+    const buttonBorderColor = isTransparent ? "border-red" : "border-olive";
 
     return (
-        <header className={`fixed top-0 left-0 right-0 z-50 flex items-center justify-between px-14 transition-all duration-300 ${wrapperClasses}`}>
-            <Link href="/" className={textColor}>
-                <LogoName variant={scrolled ? "dark" : "light"} />
-            </Link>
-            <nav className="flex items-center gap-9 text-[15px] tracking-wide">
-                <Link href="/" className={linkClass("home")}>Home</Link>
-                <Link href="/uber" className={linkClass("uber")}>Über uns</Link>
-                <Link href="/leistungen" className={linkClass("leistungen")}>Leistungen</Link>
-                <Link href="/praxis" className={linkClass("praxis")}>Praxis</Link>
-                <Link href="/#kontakt" className={linkClass("kontakt")}>Kontakt</Link>
-                <Button buttonText="Termin anfragen" link="/#kontakt" />
-            </nav>
+        <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${wrapperClasses}`}>
+            <div className="max-w-7xl mx-auto flex items-center justify-between px-14">
+                <Link href="/" className={textColor}>
+                    <LogoName variant={isTransparent ? "light" : "dark"} />
+                </Link>
+                <nav className="flex items-center gap-9 text-[15px] tracking-wide">
+                    <Link href="/" className={getHeaderMenuClass("home")}>Home</Link>
+                    <Link href="/uber" className={getHeaderMenuClass("uber")}>Über uns</Link>
+                    <Link href="/leistungen" className={getHeaderMenuClass("leistungen")}>Leistungen</Link>
+                    <Link href="/praxis" className={getHeaderMenuClass("praxis")}>Praxis</Link>
+                    <Link href="/#kontakt" className={getHeaderMenuClass("kontakt")}>Kontakt</Link>
+                    <Button buttonText="Termin anfragen" link="/#kontakt" backgroundColor={buttonBackgroundColor} border={buttonBorderColor} />
+                </nav>
+            </div>
         </header>
     );
 }
