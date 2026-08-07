@@ -59,7 +59,7 @@ export default function Hero() {
             </div>
 
             <div className="relative z-10 flex justify-center pb-14">
-                <Button backgroundColor="bg-red" border="border-red" buttonText="Termin anfragen" link="/#kontakt" />
+                <Button buttonText="Termin anfragen" filledFromStart link="/#kontakt" buttonStyle="onDarkBackground" hoverStyle="redFill" />
             </div>
         </section>
     );

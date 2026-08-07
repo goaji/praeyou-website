@@ -35,8 +35,8 @@ export default function Header({ activeLink = 'home', background = "dark" }: Hea
         return classToApply;
     }
 
-    const buttonBackgroundColor = isTransparent ? "bg-red" : "bg-olive";
-    const buttonBorderColor = isTransparent ? "border-red" : "border-olive";
+    const buttonStyle = isTransparent ? "onDarkBackground" : "onLightBackground";
+    const hoverStyle = isTransparent ? "redFill" : "oliveFill";
 
     return (
         <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${wrapperClasses}`}>
@@ -50,7 +50,7 @@ export default function Header({ activeLink = 'home', background = "dark" }: Hea
                     <Link href="/leistungen" className={getHeaderMenuClass("leistungen")}>Leistungen</Link>
                     <Link href="/praxis" className={getHeaderMenuClass("praxis")}>Praxis</Link>
                     <Link href="/#kontakt" className={getHeaderMenuClass("kontakt")}>Kontakt</Link>
-                    <Button buttonText="Termin anfragen" link="/#kontakt" backgroundColor={buttonBackgroundColor} border={buttonBorderColor} />
+                    <Button buttonText="Termin anfragen" link="/#kontakt" buttonStyle={buttonStyle} hoverStyle={hoverStyle} />
                 </nav>
             </div>
         </header>

@@ -30,24 +30,24 @@ export default function MassagePreviewCard({ massage }: { massage: Massage }) {
                 {massage.subtitle}
             </p>
 
-            <p className="m-0 mb-3.5 text-[12.5px] text-body leading-relaxed pl-5 pr-5">
+            <p className="m-0 mb-3.5 text-[12.5px] text-ink leading-relaxed pl-5 pr-5">
                 {massage.desc}
             </p>
 
             <div className="flex flex-col gap-1 mb-3.5 pl-5 pr-5 ">
-                <div className="flex justify-between gap-2.5 text-[12.5px] text-body">
+                <div className="flex justify-between gap-2.5 text-[12.5px] text-ink">
                     <span>{massage.duration1}</span>
                     <span className="text-ink">{massage.price1}</span>
                 </div>
                 {massage.duration2 && (
-                    <div className="flex justify-between gap-2.5 text-[12.5px] text-body">
+                    <div className="flex justify-between gap-2.5 text-[12.5px] text-ink">
                         <span>{massage.duration2}</span>
                         <span className="text-ink">{massage.price2}</span>
                     </div>
                 )}
             </div>
             <div className="pl-5 pr-5 flex justify-center mt-6 ">
-                <Button size='small' buttonText="Mehr erfahren" link="/#kontakt" backgroundColor="bg-olive" />
+                <Button size='small' buttonText="Mehr erfahren" link={`/leistungen/${massage.slug}`} buttonStyle="onLightBackground" hoverStyle="oliveFill" />
             </div>
         </div>
     );

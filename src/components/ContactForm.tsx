@@ -53,7 +53,7 @@ export default function ContactForm() {
                         />
                     </div>
                     <div className="flex justify-center">
-                        <Button buttonText="Anfrage senden" link="/#kontakt" textColor="text-cream" backgroundColor="bg-olive" border="border-olive" />
+                        <Button buttonText="Anfrage senden" link="/#kontakt" buttonStyle="onLightBackground" hoverStyle="oliveFill" />
                     </div>
                     <p className="text-[13px] text-olive mt-4 text-center">
                         Dies ist eine Anfrage, keine verbindliche Buchung. <br />
