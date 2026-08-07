@@ -2,10 +2,11 @@ import Image from "next/image";
 import type { Massage } from "@/app/leistungen/massagesData";
 import { MassageIcon } from "@/components/MassageIcon";
 import Button from "./Button";
+import Link from "next/link";
 
 export default function MassagePreviewCard({ massage }: { massage: Massage }) {
     return (
-        <div className="contents ">
+        <Link href={`/leistungen/${massage.slug}`} className="contents">
             <div className="relative overflow-hidden aspect-video ">
                 <Image
                     src={massage.image}
@@ -17,12 +18,12 @@ export default function MassagePreviewCard({ massage }: { massage: Massage }) {
             </div>
 
             <div className="pl-5 pr-5 mt-5 mb-3">
-                <div className="w-9.5 h-9.5 rounded-full bg-ink/20 flex items-center justify-center shrink-0 text-olive">
+                <div className="w-9.5 h-9.5 rounded-full bg-red/20 flex items-center justify-center shrink-0 text-olive">
                     <MassageIcon icon={massage.icon} size={19} />
                 </div>
             </div>
 
-            <h3 className="m-0 mb-1 font-serif text-[24px] font-extrabold text-gold pl-5 pr-5 ">
+            <h3 className="m-0 mb-1 font-serif text-[24px] font-extrabold text-red pl-5 pr-5 ">
                 {massage.name}
             </h3>
 
@@ -49,6 +50,6 @@ export default function MassagePreviewCard({ massage }: { massage: Massage }) {
             <div className="pl-5 pr-5 flex justify-center mt-6 ">
                 <Button size='small' buttonText="Mehr erfahren" link={`/leistungen/${massage.slug}`} buttonStyle="onLightBackground" hoverStyle="oliveFill" />
             </div>
-        </div>
+        </Link>
     );
 }

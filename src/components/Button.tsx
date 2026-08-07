@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 type ButtonProps = {
     buttonText: string;
     link: string;
@@ -54,7 +56,7 @@ export default function Button({ buttonText, link, size = "medium", buttonStyle,
     const { textColor, backgroundColor, border, hoveredTextColor, hoveredBackgroundColor } = getButtonStyles(buttonStyle, hoverStyle, filledFromStart);
 
     return (
-        <a
+        <Link
             href={link}
             className={`self-start tracking-wide rounded-full no-undeline transition-colors ${sizeClasses[size]}
             ${textColor}  ${backgroundColor} border ${border} 
@@ -62,7 +64,7 @@ export default function Button({ buttonText, link, size = "medium", buttonStyle,
             ${hoveredTextColor} ${sizeClasses[size]} hover:font-bold`}
         >
             {buttonText}
-        </a>
+        </Link>
     )
 }
 
