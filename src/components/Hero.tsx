@@ -57,9 +57,8 @@ export default function Hero() {
                     Du zuerst.
                 </motion.h1>
             </div>
-
             <div className="relative z-10 flex justify-center pb-14">
-                <Button buttonText="Termin anfragen" filledFromStart link="/#kontakt" buttonStyle="onDarkBackground" hoverStyle="redFill" />
+                <Button buttonText="Mehr erfahren" filledFromStart link="/leistungen" buttonStyle="onDarkBackground" hoverStyle="redFill" />
             </div>
         </section>
     );
