@@ -3,9 +3,9 @@ type LogoProps = {
 }
 
 export default function Logo({ variant = "light" }: LogoProps) {
-    const leaf1Color = variant === "dark" ? "var(--color-ink)" : "var(--color-leaf1)";
-    const leaf2Color = variant === "dark" ? "var(--color-ink)" : "var(--color-leaf2)";
-    const ellipseColor = variant === "dark" ? "var(--color-ink)" : "var(--color-elipse)";
+    const leaf1Color = variant === "dark" ? "var(--color-ink)" : "var(--color-leaf)";
+    const leaf2Color = variant === "dark" ? "var(--color-ink)" : "var(--color-cream)";
+    const ellipseColor = variant === "dark" ? "var(--color-ink)" : "var(--color-gold)";
     return (
         <svg viewBox="0 0 48 54" width={38} height={38 * 54 / 48} >
             <path d="M4 10 C12 15 18 25 22 39 C21 25 15 15 4 10 Z" fill={leaf1Color} />
