@@ -1,6 +1,6 @@
 import Link from "next/link";
 
-type ButtonProps = {
+interface ButtonProps {
     buttonText: string;
     link: string;
     size?: "small" | "medium" | "large";
@@ -9,15 +9,16 @@ type ButtonProps = {
     filledFromStart?: boolean;
 }
 
-type ButtonStylesType = {
+interface ButtonStylesType {
     textColor: string;
     backgroundColor: string;
     border: string;
 }
 
-type HoveredButtonStylesType = {
+interface HoveredButtonStylesType extends ButtonStylesType {
     hoverTextColor: string;
     hoverBackgroundColor: string;
+    hoverBorder: string;
 }
 
 const sizeClasses = {
@@ -27,21 +28,43 @@ const sizeClasses = {
 };
 
 const buttonStyles: { [key: string]: ButtonStylesType } = {
-    onLightBackground: { textColor: "ink", backgroundColor: "transparent", border: "olive" },
-    onDarkBackground: { textColor: "cream", backgroundColor: "transparent", border: "red" },
-}
+    onLightBackground: {
+        textColor: "text-ink",
+        backgroundColor: "bg-transparent",
+        border: "border-olive",
+    },
+    onDarkBackground: {
+        textColor: "text-cream",
+        backgroundColor: "bg-transparent",
+        border: "border-red",
+    },
+};
 
 const hoveredButtonStyles: { [key: string]: HoveredButtonStylesType } = {
-    oliveFill: { hoverTextColor: "cream", hoverBackgroundColor: "olive" },
-    redFill: { hoverTextColor: "cream", hoverBackgroundColor: "red" }
+    oliveFill: {
+        hoverTextColor: "hover:text-cream",
+        hoverBackgroundColor: "hover:bg-olive",
+        hoverBorder: "hover:border-olive",
+        textColor: "text-cream",
+        backgroundColor: "bg-olive",
+        border: "border-olive",
+    },
+    redFill: {
+        hoverTextColor: "hover:text-cream",
+        hoverBackgroundColor: "hover:bg-red",
+        hoverBorder: "hover:border-red",
+        textColor: "text-cream",
+        backgroundColor: "bg-red",
+        border: "border-red",
+    },
 };
 
 const getButtonStyles = (buttonStyle: string, hoverStyle: string, filledFromStart: boolean) => {
-    const textColor = `text-${filledFromStart ? hoveredButtonStyles[hoverStyle].hoverTextColor : buttonStyles[buttonStyle].textColor}`;
-    const backgroundColor = `bg-${filledFromStart ? hoveredButtonStyles[hoverStyle].hoverBackgroundColor : buttonStyles[buttonStyle].backgroundColor}`;
-    const border = `border-${filledFromStart ? hoveredButtonStyles[hoverStyle].hoverBackgroundColor : buttonStyles[buttonStyle].border}`;
-    const hoveredTextColor = `hover:text-${hoveredButtonStyles[hoverStyle].hoverTextColor}`;
-    const hoveredBackgroundColor = `hover:bg-${hoveredButtonStyles[hoverStyle].hoverBackgroundColor}`;
+    const textColor = `${filledFromStart ? hoveredButtonStyles[hoverStyle].textColor : buttonStyles[buttonStyle].textColor}`;
+    const backgroundColor = `${filledFromStart ? hoveredButtonStyles[hoverStyle].backgroundColor : buttonStyles[buttonStyle].backgroundColor}`;
+    const border = `${filledFromStart ? hoveredButtonStyles[hoverStyle].border : buttonStyles[buttonStyle].border}`;
+    const hoveredTextColor = `${hoveredButtonStyles[hoverStyle].hoverTextColor}`;
+    const hoveredBackgroundColor = `${hoveredButtonStyles[hoverStyle].hoverBackgroundColor}`;
 
     return {
         textColor,
