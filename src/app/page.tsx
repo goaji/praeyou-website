@@ -1,4 +1,4 @@
-import ContactForm from "@/components/ContactForm";
+import ContactSection from "@/components/ContactSection";
 import Footer from "@/components/Footer";
 import Hero from "@/components/Hero";
 
@@ -6,7 +6,7 @@ export default function HomePage() {
   return (
     <div>
       <Hero />
-      <ContactForm />
+      <ContactSection />
       <Footer />
     </div>
   );
