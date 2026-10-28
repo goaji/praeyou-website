@@ -14,8 +14,12 @@ const lora = Lora({
 });
 
 export const metadata: Metadata = {
-  title: "PraeYou - Du zuerst!",
-  description: "Massagen & Praevention",
+  title: {
+    default: "PRÄYou – Du zuerst.",
+    // Pages only set their own name, e.g. "Impressum" → "Impressum – PRÄYou"
+    template: "%s – PRÄYou",
+  },
+  description: "Massage & Prävention",
 };
 
 export default function RootLayout({

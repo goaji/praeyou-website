@@ -1,5 +1,6 @@
 import type { ReactNode } from "react";
 import { bookingMessage, contact, emailLink, phoneLink, whatsappLink } from "@/lib/contact";
+import { PostalAddress } from "./ContactLinks";
 
 type Channel = {
     href: string;
@@ -72,7 +73,7 @@ export default function ContactSection() {
                     </p>
                     <address className="not-italic text-[15px] text-ink">
                         <span className="block text-[11px] tracking-widest uppercase text-olive mb-1">Adresse</span>
-                        {contact.address}
+                        <PostalAddress />
                     </address>
                 </div>
 

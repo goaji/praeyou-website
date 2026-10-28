@@ -1,4 +1,7 @@
+import Link from "next/link";
 import LogoY from "./LogoY";
+import { routes } from "@/lib/routes";
+import { contact } from "@/lib/contact";
 
 export default function Footer() {
     return (
@@ -7,12 +10,12 @@ export default function Footer() {
             <div className="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-5 text-center sm:text-left">
                 <div className="flex flex-col sm:flex-row items-center gap-3 sm:gap-4">
                     <LogoY />
-                    <p className="m-0">© 2026 PRÄYOU · Massage & Prävention</p>
+                    <p className="m-0">© 2026 {contact.businessName}</p>
                 </div>
-                <div className="flex items-center gap-6">
-                    <p className="m-0">Impressum</p>
-                    <p className="m-0">Datenschutz</p>
-                </div>
+                <nav aria-label="Rechtliches" className="flex items-center gap-6">
+                    <Link href={routes.impressum} className="hover:text-gold">Impressum</Link>
+                    <Link href={routes.datenschutz} className="hover:text-gold">Datenschutz</Link>
+                </nav>
             </div>
         </footer>
     );

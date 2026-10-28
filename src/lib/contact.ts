@@ -1,19 +1,24 @@
 /**
  * Studio contact details — the only place they are defined.
- * TODO: replace the placeholders with the studio's real details before going live.
  */
 export const contact = {
+    /** Full legal name of the owner, required in the Impressum. */
+    legalName: "Augustina Betz",
+    businessName: "PRÄYou – Massage & Prävention",
     /** The studio's number in international format (+49…), no spaces. Used for calls and, by default, WhatsApp. */
-    phone: "+490000000000",
+    phone: "+4916090376628",
     /** The same number, formatted for display. Keep in sync with `phone`. */
-    phoneDisplay: "+49 (0) 000 000 000",
+    phoneDisplay: "+49 160 90376628",
     /**
      * Only set this if WhatsApp runs on a DIFFERENT number than `phone` (same +49… format).
      * Left undefined, WhatsApp uses `phone`.
      */
     whatsappPhone: undefined as string | undefined,
-    email: "hallo@praeyou.de",
-    address: "Musterstraße 12, 70000 Stuttgart",
+    email: "info@prae-you.de",
+    address: {
+        street: "Dr.-Franz-Wolf-Str. 8",
+        city: "94481 Grafenau",
+    },
 };
 
 export const phoneLink = `tel:${contact.phone}`;

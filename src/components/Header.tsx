@@ -28,7 +28,7 @@ function getHeaderState(menuOpen: boolean, background: HeaderProps["background"]
     return "solid";
 }
 
-export default function Header({ activeLink = "home", background = "dark" }: HeaderProps) {
+export default function Header({ activeLink, background = "dark" }: HeaderProps) {
     const [scrolled, setScrolled] = useState(false);
     const [menuOpen, setMenuOpen] = useState(false);
     const toggleRef = useRef<HTMLButtonElement>(null);
