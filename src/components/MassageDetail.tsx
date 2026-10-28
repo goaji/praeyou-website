@@ -1,6 +1,7 @@
 import { Massage } from "@/app/leistungen/massagesData";
 import Image from "next/image";
 import Button from "./Button";
+import { massagePath, routes } from "@/lib/routes";
 
 type MassageDetailsProps = {
     massage: Massage;
@@ -55,7 +56,7 @@ export default function MassageDetails({ massage, others }: MassageDetailsProps)
                         )}
                     </div>
                     <div className="flex justify-center">
-                        <Button size='medium' buttonText="Termin anfragen" link="/#kontakt" buttonStyle="onLightBackground" hoverStyle="oliveFill" />
+                        <Button size='medium' buttonText="Termin anfragen" link={routes.kontakt} buttonStyle="onLightBackground" hoverStyle="oliveFill" />
                     </div>
                 </div>
             </section>
@@ -66,7 +67,7 @@ export default function MassageDetails({ massage, others }: MassageDetailsProps)
                 </p>
                 <div className="flex flex-wrap justify-center gap-3">
                     {others.map((o) => (
-                        <Button size='small' buttonText={o.name} link={`/leistungen/${o.slug}`} buttonStyle="onLightBackground" hoverStyle="oliveFill" key={o.slug} />
+                        <Button size='small' buttonText={o.name} link={massagePath(o.slug)} buttonStyle="onLightBackground" hoverStyle="oliveFill" key={o.slug} />
                     ))}
                 </div>
             </section>

@@ -7,6 +7,7 @@ interface ButtonProps {
     buttonStyle: "onLightBackground" | "onDarkBackground";
     hoverStyle: "oliveFill" | "redFill";
     filledFromStart?: boolean;
+    onClick?: () => void;
 }
 
 interface ButtonStylesType {
@@ -75,12 +76,13 @@ const getButtonStyles = (buttonStyle: string, hoverStyle: string, filledFromStar
     };
 }
 
-export default function Button({ buttonText, link, size = "medium", buttonStyle, hoverStyle, filledFromStart = false }: ButtonProps) {
+export default function Button({ buttonText, link, size = "medium", buttonStyle, hoverStyle, filledFromStart = false, onClick }: ButtonProps) {
     const { textColor, backgroundColor, border, hoveredTextColor, hoveredBackgroundColor } = getButtonStyles(buttonStyle, hoverStyle, filledFromStart);
 
     return (
         <Link
             href={link}
+            onClick={onClick}
             className={`self-start tracking-wide rounded-full no-underline transition-colors ${sizeClasses[size]}
             ${textColor}  ${backgroundColor} border ${border} 
             ${hoveredBackgroundColor} 

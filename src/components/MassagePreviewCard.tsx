@@ -3,12 +3,14 @@ import type { Massage } from "@/app/leistungen/massagesData";
 import { MassageIcon } from "@/components/MassageIcon";
 import Button from "./Button";
 import Link from "next/link";
+import { massagePath } from "@/lib/routes";
+import { LG_BREAKPOINT } from "@/lib/breakpoints";
 
 export default function MassagePreviewCard({ massage }: { massage: Massage }) {
     return (
         <>
             <Link
-                href={`/leistungen/${massage.slug}`}
+                href={massagePath(massage.slug)}
                 className="relative block overflow-hidden aspect-video"
                 tabIndex={-1}
                 aria-hidden="true"
@@ -17,7 +19,7 @@ export default function MassagePreviewCard({ massage }: { massage: Massage }) {
                     src={massage.image}
                     alt={massage.name}
                     fill
-                    sizes="(min-width: 1024px) 20vw, 100vw"
+                    sizes={`(min-width: ${LG_BREAKPOINT}px) 20vw, 100vw`}
                     className="object-cover"
                 />
             </Link>
@@ -29,7 +31,7 @@ export default function MassagePreviewCard({ massage }: { massage: Massage }) {
             </div>
 
             <h3 className="m-0 mb-1 font-serif text-[24px] font-extrabold text-red pl-5 pr-5 ">
-                <Link href={`/leistungen/${massage.slug}`}>{massage.name}</Link>
+                <Link href={massagePath(massage.slug)}>{massage.name}</Link>
             </h3>
 
             <p className="m-0 mb-2 text-[11.5px] font-semibold text-olive pl-5 pr-5">
@@ -53,7 +55,7 @@ export default function MassagePreviewCard({ massage }: { massage: Massage }) {
                 )}
             </div>
             <div className="pl-5 pr-5 flex justify-center mt-6 ">
-                <Button size='small' buttonText="Mehr erfahren" link={`/leistungen/${massage.slug}`} buttonStyle="onLightBackground" hoverStyle="oliveFill" />
+                <Button size='small' buttonText="Mehr erfahren" link={massagePath(massage.slug)} buttonStyle="onLightBackground" hoverStyle="oliveFill" />
             </div>
         </>
     );

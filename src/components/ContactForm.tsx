@@ -1,5 +1,6 @@
 import Button from "./Button";
 import { massages } from "@/app/leistungen/massagesData";
+import { routes } from "@/lib/routes";
 
 export default function ContactForm() {
     return (
@@ -54,7 +55,7 @@ export default function ContactForm() {
                         />
                     </div>
                     <div className="flex justify-center">
-                        <Button buttonText="Anfrage senden" link="/#kontakt" buttonStyle="onLightBackground" hoverStyle="oliveFill" />
+                        <Button buttonText="Anfrage senden" link={routes.kontakt} buttonStyle="onLightBackground" hoverStyle="oliveFill" />
                     </div>
                     <p className="text-[13px] text-olive mt-4 text-center">
                         Dies ist eine Anfrage, keine verbindliche Buchung. <br />
