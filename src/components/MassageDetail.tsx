@@ -2,6 +2,7 @@ import { Massage } from "@/app/leistungen/massagesData";
 import Image from "next/image";
 import Button from "./Button";
 import { massagePath, routes } from "@/lib/routes";
+import { MEDIA_MIN_LG } from "@/lib/breakpoints";
 
 type MassageDetailsProps = {
     massage: Massage;
@@ -11,21 +12,22 @@ type MassageDetailsProps = {
 
 export default function MassageDetails({ massage, others }: MassageDetailsProps) {
     return (
-        <main className="pt-26 max-w-7xl mx-auto">
-            <section className="grid grid-cols-2 ">
-                <div className="relative overflow-hidden ">
+        <main className="pt-24 lg:pt-26 max-w-7xl mx-auto">
+            <section className="grid grid-cols-1 lg:grid-cols-2">
+                {/* Phones/tablets: a cropped banner on top. Desktop: fills the left column at full text height. */}
+                <div className="relative overflow-hidden aspect-[16/10] sm:aspect-[2/1] lg:aspect-auto">
                     <Image
                         src={massage.imagePreview}
                         alt={massage.name}
                         fill
-                        sizes="50vw"
+                        sizes={`${MEDIA_MIN_LG} 50vw, 100vw`}
                         className="object-cover"
                         priority
                     />
                 </div>
 
-                <div className="flex flex-col px-10 py-10 max-w-140 mx-auto">
-                    <h1 className="font-serif font-medium text-5xl text-ink mb-3">
+                <div className="flex flex-col px-5 sm:px-10 py-8 lg:py-10 max-w-140 mx-auto">
+                    <h1 className="font-serif font-medium text-4xl sm:text-5xl text-ink mb-3">
                         {massage.name}
                     </h1>
                     <p className="text-[13px] font-semibold uppercase tracking-wider text-olive mb-5">
@@ -56,21 +58,21 @@ export default function MassageDetails({ massage, others }: MassageDetailsProps)
                         )}
                     </div>
                     <div className="flex justify-center">
-                        <Button size='medium' buttonText="Termin anfragen" link={routes.kontakt} buttonStyle="onLightBackground" hoverStyle="oliveFill" />
+                        <Button size="medium" buttonText="Termin anfragen" link={routes.kontakt} buttonStyle="onLightBackground" hoverStyle="oliveFill" />
                     </div>
                 </div>
             </section>
 
-            <section className="flex flex-col items-center text-center py-6 px-14">
+            <section className="flex flex-col items-center text-center pt-6 pb-12 px-5 sm:px-14">
                 <p className="text-[13px] font-semibold uppercase tracking-wider text-olive mb-6">
                     Weitere Massagen
                 </p>
                 <div className="flex flex-wrap justify-center gap-3">
                     {others.map((o) => (
-                        <Button size='small' buttonText={o.name} link={massagePath(o.slug)} buttonStyle="onLightBackground" hoverStyle="oliveFill" key={o.slug} />
+                        <Button size="small" buttonText={o.name} link={massagePath(o.slug)} buttonStyle="onLightBackground" hoverStyle="oliveFill" key={o.slug} />
                     ))}
                 </div>
             </section>
-        </main >
+        </main>
     );
 }
