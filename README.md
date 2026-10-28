@@ -24,7 +24,7 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 
 ## Project Structure
 
-- `src/app` — routes (App Router), including `leistungen` (services), `praxis`, `uber` (about), `impressum`, and `datenschutz`
+- `src/app` — routes (App Router): home, `leistungen` (services overview + one generated page per massage), `uber` (about) and `praxis` (placeholders for now)
 - `src/components` — shared UI components (Header, Footer, Hero, Button, forms, etc.)
 
 ## Scripts

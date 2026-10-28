@@ -81,10 +81,10 @@ export default function Button({ buttonText, link, size = "medium", buttonStyle,
     return (
         <Link
             href={link}
-            className={`self-start tracking-wide rounded-full no-undeline transition-colors ${sizeClasses[size]}
+            className={`self-start tracking-wide rounded-full no-underline transition-colors ${sizeClasses[size]}
             ${textColor}  ${backgroundColor} border ${border} 
             ${hoveredBackgroundColor} 
-            ${hoveredTextColor} ${sizeClasses[size]} hover:font-bold`}
+            ${hoveredTextColor} hover:font-bold`}
         >
             {buttonText}
         </Link>

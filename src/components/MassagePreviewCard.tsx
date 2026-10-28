@@ -6,8 +6,13 @@ import Link from "next/link";
 
 export default function MassagePreviewCard({ massage }: { massage: Massage }) {
     return (
-        <Link href={`/leistungen/${massage.slug}`} className="contents">
-            <div className="relative overflow-hidden aspect-video ">
+        <>
+            <Link
+                href={`/leistungen/${massage.slug}`}
+                className="relative block overflow-hidden aspect-video"
+                tabIndex={-1}
+                aria-hidden="true"
+            >
                 <Image
                     src={massage.image}
                     alt={massage.name}
@@ -15,7 +20,7 @@ export default function MassagePreviewCard({ massage }: { massage: Massage }) {
                     sizes="(min-width: 1024px) 20vw, 100vw"
                     className="object-cover"
                 />
-            </div>
+            </Link>
 
             <div className="pl-5 pr-5 mt-5 mb-3">
                 <div className="w-9.5 h-9.5 rounded-full bg-red/20 flex items-center justify-center shrink-0 text-olive">
@@ -24,7 +29,7 @@ export default function MassagePreviewCard({ massage }: { massage: Massage }) {
             </div>
 
             <h3 className="m-0 mb-1 font-serif text-[24px] font-extrabold text-red pl-5 pr-5 ">
-                {massage.name}
+                <Link href={`/leistungen/${massage.slug}`}>{massage.name}</Link>
             </h3>
 
             <p className="m-0 mb-2 text-[11.5px] font-semibold text-olive pl-5 pr-5">
@@ -50,6 +55,6 @@ export default function MassagePreviewCard({ massage }: { massage: Massage }) {
             <div className="pl-5 pr-5 flex justify-center mt-6 ">
                 <Button size='small' buttonText="Mehr erfahren" link={`/leistungen/${massage.slug}`} buttonStyle="onLightBackground" hoverStyle="oliveFill" />
             </div>
-        </Link>
+        </>
     );
 }

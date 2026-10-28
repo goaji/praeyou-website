@@ -1,4 +1,5 @@
 import Button from "./Button";
+import { massages } from "@/app/leistungen/massagesData";
 
 export default function ContactForm() {
     return (
@@ -36,11 +37,11 @@ export default function ContactForm() {
                     <div className="mb-5">
                         <label className="block text-[11px] tracking-widest uppercase text-olive mb-2">Behandlung</label>
                         <select className="w-full box-border border border-ink/15 rounded p-3 text-[15px] bg-cream text-ink">
-                            <option>Klassische Masolive — 60 Min.</option>
-                            <option>Sportmasolive — 50 Min.</option>
-                            <option>Triggerpunkt-Masolive — 40 Min.</option>
-                            <option>Rückenmasolive — 30 Min.</option>
-                            <option>Ganzkörper-Wellness — 90 Min.</option>
+                            {massages.map((m) => (
+                                <option key={m.slug} value={m.slug}>
+                                    {m.name} — {m.subtitle}
+                                </option>
+                            ))}
                         </select>
                     </div>
 
