@@ -2,6 +2,7 @@ import { Massage } from "@/app/leistungen/massagesData";
 import Image from "next/image";
 import Button from "./Button";
 import Prose from "./Prose";
+import BeforeTreatmentLink from "./BeforeTreatmentLink";
 import { CONTAINER, PAGE_TOP_LG } from "@/lib/layout";
 import { Divider } from "./PageTitle";
 import { massagePath, routes } from "@/lib/routes";
@@ -62,6 +63,7 @@ export default function MassageDetails({ massage, others }: MassageDetailsProps)
                     <div className="flex justify-center">
                         <Button size="medium" buttonText="Termin anfragen" link={routes.kontakt} buttonStyle="onLightBackground" hoverStyle="oliveFill" />
                     </div>
+                    <BeforeTreatmentLink className="mt-5 self-center" />
                 </div>
             </section>
 

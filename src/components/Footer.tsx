@@ -12,7 +12,8 @@ export default function Footer() {
                     <LogoY />
                     <p className="m-0">© 2026 {contact.businessName}</p>
                 </div>
-                <nav aria-label="Rechtliches" className="flex items-center gap-6">
+                <nav aria-label="Weitere Seiten" className="flex flex-wrap items-center justify-center gap-x-6 gap-y-2">
+                    <Link href={routes.vorDerBehandlung} className="hover:text-gold">Hinweise</Link>
                     <Link href={routes.impressum} className="hover:text-gold">Impressum</Link>
                     <Link href={routes.datenschutz} className="hover:text-gold">Datenschutz</Link>
                 </nav>

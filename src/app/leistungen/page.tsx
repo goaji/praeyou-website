@@ -3,6 +3,7 @@ import { massages } from "./massagesData";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import PageTitle from "@/components/PageTitle";
+import BeforeTreatmentLink from "@/components/BeforeTreatmentLink";
 import { CONTAINER, PAGE_TOP } from "@/lib/layout";
 
 export default function LeistungenPage() {
@@ -15,6 +16,7 @@ export default function LeistungenPage() {
           <p className="leading-normal text-olive max-w-130">
             Zeit für dich. Für deinen Körper.<br />Für mehr Leichtigkeit, Balance und Wohlbefinden.
           </p>
+          <BeforeTreatmentLink className="mt-4" />
         </section>
         {/* Cards are subgrids (see MassagePreviewCard); only the column count changes per breakpoint */}
         <div className={`${CONTAINER} grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-x-4`}>

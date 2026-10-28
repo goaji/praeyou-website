@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
-import LegalPage, { LegalAddress, LegalSection } from "@/components/LegalPage";
-import { EmailLink } from "@/components/ContactLinks";
+import TextPage, { TextSection } from "@/components/TextPage";
+import { EmailLink, LegalAddress } from "@/components/ContactInfo";
 
 export const metadata: Metadata = {
   title: "Datenschutzerklärung",
@@ -12,19 +12,19 @@ export const metadata: Metadata = {
 // Must be updated whenever services are added to the site (analytics, embeds, forms, …).
 export default function DatenschutzPage() {
   return (
-    <LegalPage title="Datenschutzerklärung" updated="Oktober 2026">
+    <TextPage title="Datenschutzerklärung" updated="Oktober 2026">
       <p>
         Mit dieser Datenschutzerklärung informieren wir darüber, welche personenbezogenen Daten beim Besuch
         dieser Website sowie bei einer Kontaktaufnahme verarbeitet werden.
       </p>
 
-      <LegalSection heading="1. Verantwortliche">
+      <TextSection heading="1. Verantwortliche">
         <p>Verantwortlich für die Datenverarbeitung auf dieser Website ist:</p>
         <LegalAddress />
         <p>E-Mail: <EmailLink /></p>
-      </LegalSection>
+      </TextSection>
 
-      <LegalSection heading="2. Allgemeine Hinweise zur Datenverarbeitung">
+      <TextSection heading="2. Allgemeine Hinweise zur Datenverarbeitung">
         <p>
           Personenbezogene Daten sind alle Informationen, mit denen eine natürliche Person direkt oder indirekt
           identifiziert werden kann. Wir verarbeiten personenbezogene Daten nur, soweit dies für die Bereitstellung
@@ -37,9 +37,9 @@ export default function DatenschutzPage() {
           Grundlage von Art. 6 Abs. 1 lit. f DSGVO, soweit ein berechtigtes Interesse an einer sicheren,
           zuverlässigen und nutzerfreundlichen Bereitstellung der Website besteht.
         </p>
-      </LegalSection>
+      </TextSection>
 
-      <LegalSection heading="3. Hosting der Website">
+      <TextSection heading="3. Hosting der Website">
         <p>
           Diese Website wird bei Hostinger gehostet. Anbieter ist die Hostinger International Ltd., 61 Lordou
           Vironos Street, Lumiel Building, 4th floor, 6023 Larnaca, Zypern.
@@ -63,9 +63,9 @@ export default function DatenschutzPage() {
           des Europäischen Wirtschaftsraums verarbeitet werden, erfolgt eine Übermittlung nur unter Beachtung der
           hierfür geltenden datenschutzrechtlichen Voraussetzungen.
         </p>
-      </LegalSection>
+      </TextSection>
 
-      <LegalSection heading="4. Kontaktaufnahme per E-Mail">
+      <TextSection heading="4. Kontaktaufnahme per E-Mail">
         <p>
           Auf unserer Website wird die E-Mail-Adresse <EmailLink /> zur Kontaktaufnahme angegeben. Wenn Sie uns
           per E-Mail kontaktieren, verarbeiten wir die von Ihnen übermittelten Daten, insbesondere Ihre
@@ -82,9 +82,9 @@ export default function DatenschutzPage() {
           keine gesetzlichen Aufbewahrungspflichten oder sonstigen berechtigten Gründe für eine weitere Speicherung
           bestehen.
         </p>
-      </LegalSection>
+      </TextSection>
 
-      <LegalSection heading="5. Termin- und Kontaktanfragen über WhatsApp Business">
+      <TextSection heading="5. Termin- und Kontaktanfragen über WhatsApp Business">
         <p>
           Auf unserer Website wird eine Telefonnummer angegeben, unter der Sie uns freiwillig über WhatsApp
           Business kontaktieren können. Zusätzlich befindet sich auf der Website ein Link, der beim Anklicken WhatsApp öffnet und eine Nachricht an uns vorbereitet. Durch den bloßen Besuch unserer Website wird keine Verbindung zu WhatsApp hergestellt; eine Verbindung entsteht erst, wenn Sie diesen Link aktiv anklicken.
@@ -117,9 +117,9 @@ export default function DatenschutzPage() {
           insbesondere keine ausführlichen Gesundheitsdaten. Für die Terminvereinbarung sind solche Angaben
           grundsätzlich nicht erforderlich.
         </p>
-      </LegalSection>
+      </TextSection>
 
-      <LegalSection heading="6. Keine Kontaktformulare und keine Analyse- oder Marketingdienste">
+      <TextSection heading="6. Keine Kontaktformulare und keine Analyse- oder Marketingdienste">
         <p>
           Auf dieser Website wird derzeit kein Kontaktformular eingesetzt. Ebenso sind keine eigenen Analyse-, Tracking- oder Marketingdienste wie Google Analytics oder Meta Pixel eingebunden.
         </p>
@@ -128,9 +128,9 @@ export default function DatenschutzPage() {
           werden, wird diese Datenschutzerklärung entsprechend angepasst. Soweit für deren Einsatz eine
           Einwilligung erforderlich ist, werden diese Dienste erst nach einer entsprechenden Einwilligung aktiviert.
         </p>
-      </LegalSection>
+      </TextSection>
 
-      <LegalSection heading="7. Cookies und technisch erforderliche Funktionen">
+      <TextSection heading="7. Cookies und technisch erforderliche Funktionen">
         <p>
           Soweit für den technischen Betrieb der Website unbedingt erforderliche Cookies oder vergleichbare
           Technologien eingesetzt werden, dienen diese ausschließlich der Bereitstellung und Funktionsfähigkeit der
@@ -140,18 +140,18 @@ export default function DatenschutzPage() {
           Nicht technisch erforderliche Analyse- oder Marketing-Cookies werden nicht eingesetzt. Sollte sich dies zukünftig ändern, werden die erforderlichen datenschutzrechtlichen
           Informationen und – soweit gesetzlich erforderlich – eine Einwilligungsmöglichkeit bereitgestellt.
         </p>
-      </LegalSection>
+      </TextSection>
 
-      <LegalSection heading="8. Speicherdauer">
+      <TextSection heading="8. Speicherdauer">
         <p>
           Wir speichern personenbezogene Daten nur so lange, wie dies für den jeweiligen Verarbeitungszweck
           erforderlich ist. Darüber hinaus können Daten gespeichert werden, soweit gesetzliche Aufbewahrungsfristen
           bestehen oder die Speicherung zur Geltendmachung, Ausübung oder Verteidigung von Rechtsansprüchen
           erforderlich ist.
         </p>
-      </LegalSection>
+      </TextSection>
 
-      <LegalSection heading="9. Ihre Rechte">
+      <TextSection heading="9. Ihre Rechte">
         <p>
           Sie haben im Rahmen der gesetzlichen Voraussetzungen insbesondere das Recht auf Auskunft über die zu
           Ihrer Person gespeicherten Daten (Art. 15 DSGVO), Berichtigung unrichtiger Daten (Art. 16 DSGVO),
@@ -164,31 +164,31 @@ export default function DatenschutzPage() {
           bleibt hiervon unberührt.
         </p>
         <p>Zur Ausübung Ihrer Rechte können Sie sich an <EmailLink /> wenden.</p>
-      </LegalSection>
+      </TextSection>
 
-      <LegalSection heading="10. Beschwerderecht bei einer Aufsichtsbehörde">
+      <TextSection heading="10. Beschwerderecht bei einer Aufsichtsbehörde">
         <p>
           Sie haben das Recht, sich bei einer Datenschutzaufsichtsbehörde zu beschweren, wenn Sie der Ansicht sind,
           dass die Verarbeitung Ihrer personenbezogenen Daten gegen die DSGVO verstößt. Sie können sich
           insbesondere an die für Ihren Wohnort, Ihren Arbeitsplatz oder den Ort des mutmaßlichen Verstoßes
           zuständige Aufsichtsbehörde wenden.
         </p>
-      </LegalSection>
+      </TextSection>
 
-      <LegalSection heading="11. Sicherheit">
+      <TextSection heading="11. Sicherheit">
         <p>
           Wir treffen angemessene technische und organisatorische Maßnahmen, um personenbezogene Daten vor Verlust,
           Manipulation, unberechtigtem Zugriff oder sonstiger unzulässiger Verarbeitung zu schützen. Die Website wird über eine verschlüsselte HTTPS-Verbindung bereitgestellt.
         </p>
-      </LegalSection>
+      </TextSection>
 
-      <LegalSection heading="12. Aktualität und Änderung dieser Datenschutzerklärung">
+      <TextSection heading="12. Aktualität und Änderung dieser Datenschutzerklärung">
         <p>
           Diese Datenschutzerklärung entspricht dem aktuellen Funktionsumfang der Website. Änderungen
           der Website, der eingesetzten Dienste oder der rechtlichen Anforderungen können eine Anpassung
           erforderlich machen. Die jeweils aktuelle Fassung ist auf dieser Website dauerhaft abrufbar.
         </p>
-      </LegalSection>
-    </LegalPage>
+      </TextSection>
+    </TextPage>
   );
 }

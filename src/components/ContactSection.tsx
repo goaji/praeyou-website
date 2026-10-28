@@ -1,6 +1,7 @@
 import type { ReactNode } from "react";
 import { bookingMessage, contact, emailLink, phoneLink, whatsappLink } from "@/lib/contact";
-import { PostalAddress } from "./ContactLinks";
+import { PostalAddress } from "./ContactInfo";
+import BeforeTreatmentLink from "./BeforeTreatmentLink";
 import { CONTAINER } from "@/lib/layout";
 
 type Channel = {
@@ -72,6 +73,7 @@ export default function ContactSection() {
                         Behandlung können wir nicht ans Telefon gehen – wir melden uns aber
                         so schnell wie möglich zurück.
                     </p>
+                    <BeforeTreatmentLink className="mb-7" />
                     <address className="not-italic text-[15px] text-ink">
                         <span className="block text-[11px] tracking-widest uppercase text-olive mb-1">Adresse</span>
                         <PostalAddress />

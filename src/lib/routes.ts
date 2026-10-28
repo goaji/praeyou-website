@@ -10,6 +10,7 @@ export const routes = {
     kontakt: "/#kontakt",
     impressum: "/impressum",
     datenschutz: "/datenschutz",
+    vorDerBehandlung: "/vor-der-behandlung",
 } as const;
 
 /** URL of a single massage's detail page. */
@@ -20,8 +21,8 @@ export const navLinks = [
     { key: "home", label: "Home" },
     { key: "uber", label: "Über mich" },
     { key: "leistungen", label: "Leistungen" },
+    { key: "vorDerBehandlung", label: "Hinweise" },
     { key: "praxis", label: "Praxis" },
-    { key: "kontakt", label: "Kontakt" },
 ] as const satisfies readonly { key: keyof typeof routes; label: string }[];
 
 /** Pages that appear in the main navigation (and can be highlighted in the header). */

@@ -20,3 +20,16 @@ export function PhoneLink() {
 export function EmailLink() {
     return <a href={emailLink} className="underline">{contact.email}</a>;
 }
+
+/** Owner, business name and postal address, as required on the legal pages. */
+export function LegalAddress() {
+    return (
+        <p>
+            {contact.legalName}
+            <br />
+            {contact.businessName}
+            <br />
+            <PostalAddress />
+        </p>
+    );
+}
