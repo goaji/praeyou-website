@@ -4,11 +4,11 @@ import { routes } from "@/lib/routes";
 
 export default function ContactForm() {
     return (
-        <section id="kontakt" className="bg-cream px-14 py-24">
-            <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-18 items-start">
+        <section id="kontakt" className="bg-cream px-5 sm:px-8 lg:px-14 py-16 lg:py-24">
+            <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-18 items-start">
                 <div className="pt-3">
                     <span className="text-sm tracking-widest uppercase text-olive font-medium">Termine</span>
-                    <h2 className="font-serif font-medium text-4xl my-4 text-ink">
+                    <h2 className="font-serif font-medium text-3xl sm:text-4xl my-4 text-ink">
                         Zeit für Sie <em className="italic">reservieren</em>.
                     </h2>
                     <p className="text-olive leading-relaxed  mb-7 max-w-105">
@@ -23,21 +23,21 @@ export default function ContactForm() {
                     </div>
                 </div>
 
-                <div className="bg-white rounded-md p-10 shadow-[0_20px_50px_rgba(46,47,38,0.08)]">
-                    <div className="grid grid-cols-2 gap-5 mb-5">
+                <div className="bg-white rounded-md p-6 sm:p-10 shadow-[0_20px_50px_rgba(46,47,38,0.08)]">
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-5 mb-5">
                         <div>
                             <label className="block text-[11px] tracking-widest uppercase text-olive mb-2">Name</label>
-                            <input type="text" className="w-full box-border border border-ink/15 rounded p-3 text-[15px] bg-cream" />
+                            <input type="text" className="w-full box-border border border-ink/15 rounded p-3 text-base sm:text-[15px] bg-cream" />
                         </div>
                         <div>
                             <label className="block text-[11px] tracking-widest uppercase text-olive mb-2">Telefon oder E-Mail</label>
-                            <input type="text" className="w-full box-border border border-ink/15 rounded p-3 text-[15px] bg-cream" />
+                            <input type="text" className="w-full box-border border border-ink/15 rounded p-3 text-base sm:text-[15px] bg-cream" />
                         </div>
                     </div>
 
                     <div className="mb-5">
                         <label className="block text-[11px] tracking-widest uppercase text-olive mb-2">Behandlung</label>
-                        <select className="w-full box-border border border-ink/15 rounded p-3 text-[15px] bg-cream text-ink">
+                        <select className="w-full box-border border border-ink/15 rounded p-3 text-base sm:text-[15px] bg-cream text-ink">
                             {massages.map((m) => (
                                 <option key={m.slug} value={m.slug}>
                                     {m.name} — {m.subtitle}
@@ -51,7 +51,7 @@ export default function ContactForm() {
                         <textarea
                             rows={3}
                             placeholder="z. B. Dienstag oder Donnerstag, später Nachmittag"
-                            className="w-full box-border border border-ink/15 rounded p-3 text-[15px] bg-cream font-sans resize-y"
+                            className="w-full box-border border border-ink/15 rounded p-3 text-base sm:text-[15px] bg-cream font-sans resize-y"
                         />
                     </div>
                     <div className="flex justify-center">
