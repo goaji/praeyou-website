@@ -1,10 +1,13 @@
 /**
  * Studio contact details — the only place they are defined.
  */
+/** The brand name as written in the owner's legal documents. */
+export const BRAND = "PRÄYou";
+
 export const contact = {
     /** Full legal name of the owner, required in the Impressum. */
     legalName: "Augustina Betz",
-    businessName: "PRÄYou – Massage & Prävention",
+    businessName: `${BRAND} – Massage & Prävention`,
     /** The studio's number in international format (+49…), no spaces. Used for calls and, by default, WhatsApp. */
     phone: "+4916090376628",
     /** The same number, formatted for display. Keep in sync with `phone`. */

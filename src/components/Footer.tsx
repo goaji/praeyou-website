@@ -2,12 +2,12 @@ import Link from "next/link";
 import LogoY from "./LogoY";
 import { routes } from "@/lib/routes";
 import { contact } from "@/lib/contact";
+import { CONTAINER } from "@/lib/layout";
 
 export default function Footer() {
     return (
-        <footer className="text-[13px] text-cream bg-olive px-5 sm:px-8 lg:px-14 py-10">
-            {/* Same max width as the header, so footer and header content line up on wide screens */}
-            <div className="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-5 text-center sm:text-left">
+        <footer className="text-[13px] text-cream bg-olive py-10">
+            <div className={`${CONTAINER} flex flex-col sm:flex-row items-center justify-between gap-5 text-center sm:text-left`}>
                 <div className="flex flex-col sm:flex-row items-center gap-3 sm:gap-4">
                     <LogoY />
                     <p className="m-0">© 2026 {contact.businessName}</p>

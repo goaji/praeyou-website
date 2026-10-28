@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Cormorant_Garamond, Lora, Work_Sans } from "next/font/google";
 import "./globals.css";
+import { BRAND } from "@/lib/contact";
 
 const cormorant = Cormorant_Garamond({
   subsets: ["latin"], weight: ["500", "600"], variable: "--font-serif",
@@ -15,9 +16,9 @@ const lora = Lora({
 
 export const metadata: Metadata = {
   title: {
-    default: "PRÄYou – Du zuerst.",
+    default: `${BRAND} – Du zuerst.`,
     // Pages only set their own name, e.g. "Impressum" → "Impressum – PRÄYou"
-    template: "%s – PRÄYou",
+    template: `%s – ${BRAND}`,
   },
   description: "Massage & Prävention",
 };

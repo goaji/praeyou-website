@@ -1,6 +1,7 @@
 import type { ReactNode } from "react";
 import { bookingMessage, contact, emailLink, phoneLink, whatsappLink } from "@/lib/contact";
 import { PostalAddress } from "./ContactLinks";
+import { CONTAINER } from "@/lib/layout";
 
 type Channel = {
     href: string;
@@ -59,8 +60,8 @@ const channels: Channel[] = [
 
 export default function ContactSection() {
     return (
-        <section id="kontakt" className="bg-cream px-5 sm:px-8 lg:px-14 py-16 lg:py-24">
-            <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-18 items-start">
+        <section id="kontakt" className="bg-cream py-16 lg:py-24">
+            <div className={`${CONTAINER} grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-18 items-start`}>
                 <div className="pt-3">
                     <span className="text-sm tracking-widest uppercase text-olive font-medium">Termine</span>
                     <h2 className="font-serif font-medium text-3xl sm:text-4xl my-4 text-ink">

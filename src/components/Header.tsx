@@ -7,6 +7,7 @@ import Button from "./Button";
 import NavItem from "./NavItem";
 import { navLinks, routes, type NavKey } from "@/lib/routes";
 import { MEDIA_MIN_LG } from "@/lib/breakpoints";
+import { CONTAINER } from "@/lib/layout";
 
 type HeaderProps = {
     activeLink?: NavKey;
@@ -71,7 +72,7 @@ export default function Header({ activeLink, background = "dark" }: HeaderProps)
 
     return (
         <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${wrapperClasses[state]}`}>
-            <div className="max-w-7xl mx-auto flex items-center justify-between px-5 sm:px-8 lg:px-14">
+            <div className={`${CONTAINER} flex items-center justify-between`}>
                 <Link href={routes.home} className={textColor} onClick={closeMenu}>
                     <LogoName variant={isTransparent ? "light" : "dark"} />
                 </Link>
