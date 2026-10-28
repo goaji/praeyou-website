@@ -14,7 +14,7 @@ export default function VorDerBehandlungPage() {
     <TextPage
       title="Vor deiner Behandlung"
       activeLink="vorDerBehandlung"
-      intro="Damit deine Zeit bei PRÄYou entspannt, individuell und verantwortungsvoll gestaltet werden kann."
+      intro="Damit deine Zeit bei PräYou entspannt, individuell und verantwortungsvoll gestaltet werden kann."
     >
       <TextSection heading="Gesundheit & Wohlbefinden">
         <p>

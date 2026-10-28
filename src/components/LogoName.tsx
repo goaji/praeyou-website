@@ -19,7 +19,7 @@ export default function LogoName({ variant = "light" }: LogoNameProps) {
                 </span>
             </div>
             <span className={`text-[11px] tracking-widest uppercase ${textColor} whitespace-nowrap`}>
-                MASSAGEN & PRÄVENTION
+                MASSAGE & PRÄVENTION
             </span>
         </div>
     );

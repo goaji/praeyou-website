@@ -2,7 +2,7 @@
  * Studio contact details — the only place they are defined.
  */
 /** The brand name as written in the owner's legal documents. */
-export const BRAND = "PRÄYou";
+export const BRAND = "PräYou";
 
 export const contact = {
     /** Full legal name of the owner, required in the Impressum. */

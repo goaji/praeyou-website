@@ -66,11 +66,11 @@ export default function ContactSection() {
                 <div className="pt-3">
                     <span className="text-sm tracking-widest uppercase text-olive font-medium">Termine</span>
                     <h2 className="font-serif font-medium text-3xl sm:text-4xl my-4 text-ink">
-                        Zeit für Sie <em className="italic">reservieren</em>.
+                        Zeit für dich <em className="italic">reservieren</em>.
                     </h2>
                     <p className="text-olive leading-relaxed mb-7 max-w-105">
-                        Rufen Sie uns an oder schreiben Sie uns per WhatsApp. Während einer
-                        Behandlung können wir nicht ans Telefon gehen – wir melden uns aber
+                        Ruf mich an oder schreib mir per WhatsApp. Während einer
+                        Behandlung kann ich nicht ans Telefon gehen – ich melde mich aber
                         so schnell wie möglich zurück.
                     </p>
                     <BeforeTreatmentLink className="mb-7" />

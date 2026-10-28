@@ -17,7 +17,7 @@ const lora = Lora({
 export const metadata: Metadata = {
   title: {
     default: `${BRAND} – Du zuerst.`,
-    // Pages only set their own name, e.g. "Impressum" → "Impressum – PRÄYou"
+    // Pages only set their own name, e.g. "Impressum" → "Impressum – PräYou"
     template: `%s – ${BRAND}`,
   },
   description: "Massage & Prävention",
