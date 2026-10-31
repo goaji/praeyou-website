@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
-import LogoName from "./LogoName";
+import Image from "next/image";
 import Button from "./Button";
 import NavItem from "./NavItem";
 import { navLinks, routes, type NavKey } from "@/lib/routes";
@@ -74,7 +74,7 @@ export default function Header({ activeLink, background = "dark" }: HeaderProps)
         <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${wrapperClasses[state]}`}>
             <div className={`${CONTAINER} flex items-center justify-between`}>
                 <Link href={routes.home} className={textColor} onClick={closeMenu}>
-                    <LogoName variant={isTransparent ? "light" : "dark"} />
+                    <Image src="/logo.svg" alt="Präyou – Massage & Prävention" width={930} height={934} priority className="h-16 lg:h-20 w-auto" />
                 </Link>
 
                 {/* Desktop navigation */}
