@@ -12,7 +12,7 @@ type NavItemProps = {
 
 function getNavItemClasses(variant: NavItemProps["variant"], isActive: boolean, onDark: boolean) {
     if (variant === "mobile") {
-        return `block py-3 text-lg tracking-wide border-b border-ink/5 ${isActive ? "text-red" : "text-ink"}`;
+        return `block py-3 text-xl tracking-wide border-b border-ink/5 ${isActive ? "text-red" : "text-ink"}`;
     }
     if (isActive) {
         return `${onDark ? "text-gold" : "text-red"} border-b border-gold pb-0.5`;

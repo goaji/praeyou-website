@@ -76,12 +76,12 @@ export default function Header({ activeLink, background = "dark" }: HeaderProps)
                 {/* Two logo versions: cream lettering on the hero photo, dark brown elsewhere.
                     Both are loaded up front so switching on scroll doesn't flicker. */}
                 <Link href={routes.home} className="relative" onClick={closeMenu}>
-                    <Image src="/logo.svg" alt="Präyou – Massage & Prävention" width={930} height={934} priority className={`h-16 lg:h-20 w-auto transition-opacity duration-300 ${isTransparent ? "opacity-0" : "opacity-100"}`} />
-                    <Image src="/logo-light.svg" alt="" aria-hidden="true" width={930} height={934} priority className={`absolute inset-0 h-16 lg:h-20 w-auto transition-opacity duration-300 ${isTransparent ? "opacity-100" : "opacity-0"}`} />
+                    <Image src="/logo.svg" alt="Präyou – Massage & Prävention" width={930} height={934} priority className={`h-20 lg:h-24 w-auto transition-opacity duration-300 ${isTransparent ? "opacity-0" : "opacity-100"}`} />
+                    <Image src="/logo-light.svg" alt="" aria-hidden="true" width={930} height={934} priority className={`absolute inset-0 h-20 lg:h-24 w-auto transition-opacity duration-300 ${isTransparent ? "opacity-100" : "opacity-0"}`} />
                 </Link>
 
                 {/* Desktop navigation */}
-                <nav aria-label="Hauptnavigation" className="hidden lg:flex items-center gap-9 text-[15px] tracking-wide">
+                <nav aria-label="Hauptnavigation" className="hidden lg:flex items-center gap-9 text-[17px] tracking-wide">
                     {navLinks.map((link) => (
                         <NavItem
                             key={link.key}
