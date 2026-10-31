@@ -19,7 +19,7 @@ export default function LeistungenPage() {
           <BeforeTreatmentLink className="mt-4" />
         </section>
         {/* Cards are subgrids (see MassagePreviewCard); only the column count changes per breakpoint */}
-        <div className={`${CONTAINER} grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-x-4`}>
+        <div className={`${CONTAINER} grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-8`}>
           {massages.map((m) => <MassagePreviewCard key={m.slug} massage={m} />)}
         </div>
       </main>

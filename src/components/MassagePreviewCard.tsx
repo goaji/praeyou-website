@@ -1,3 +1,4 @@
+import type { ComponentProps } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import type { Massage } from "@/app/leistungen/massagesData";
@@ -12,26 +13,29 @@ import { MEDIA_MIN_LG, MEDIA_MIN_SM } from "@/lib/breakpoints";
  * subtitle, description, prices and button line up across all cards in a row.
  * `row-span-7` must equal the number of direct children below: adding or removing
  * one means updating it, otherwise the row alignment breaks silently.
+ * A "coming soon" massage keeps all 7 rows but has no links and no prices.
  */
+/** A link to the detail page, or plain content (no link) when `href` is undefined. */
+function LinkIfAvailable({ href, children, ...props }: Omit<ComponentProps<typeof Link>, "href"> & { href?: string }) {
+    if (!href) return <div className={props.className}>{children}</div>;
+    return <Link href={href} {...props}>{children}</Link>;
+}
+
 export default function MassagePreviewCard({ massage }: { massage: Massage }) {
-    const href = massagePath(massage.slug);
+    const isComingSoon = massage.comingSoon === true;
+    const href = isComingSoon ? undefined : massagePath(massage.slug);
 
     return (
         <article className="grid grid-rows-subgrid row-span-7 pb-14 lg:pb-0">
-            <Link
-                href={href}
-                className="relative block overflow-hidden aspect-video"
-                tabIndex={-1}
-                aria-hidden="true"
-            >
+            <LinkIfAvailable href={href} className="relative block overflow-hidden aspect-video" tabIndex={-1} aria-hidden="true">
                 <Image
                     src={massage.image}
                     alt={massage.name}
                     fill
-                    sizes={`${MEDIA_MIN_LG} 20vw, ${MEDIA_MIN_SM} 50vw, 100vw`}
-                    className="object-cover"
+                    sizes={`${MEDIA_MIN_LG} 33vw, ${MEDIA_MIN_SM} 50vw, 100vw`}
+                    className={`object-cover ${isComingSoon ? "grayscale-[60%] opacity-70" : ""}`}
                 />
-            </Link>
+            </LinkIfAvailable>
 
             <div className="px-5 mt-5 mb-3">
                 <div className="w-9.5 h-9.5 rounded-full bg-red/20 flex items-center justify-center shrink-0 text-olive">
@@ -39,33 +43,38 @@ export default function MassagePreviewCard({ massage }: { massage: Massage }) {
                 </div>
             </div>
 
-            <h3 className="m-0 mb-1 font-serif text-[26px] lg:text-[24px] font-extrabold text-red px-5">
-                <Link href={href}>{massage.name}</Link>
+            <h3 className={`m-0 mb-1 font-serif text-[26px] font-extrabold px-5 ${isComingSoon ? "text-red/60" : "text-red"}`}>
+                <LinkIfAvailable href={href}>{massage.name}</LinkIfAvailable>
             </h3>
 
-            <p className="m-0 mb-2 text-[13px] lg:text-[11.5px] font-semibold text-olive px-5">
+            <p className="m-0 mb-2 text-[13px] font-semibold text-olive px-5">
                 {massage.subtitle}
             </p>
 
-            <p className="m-0 mb-3.5 text-[15px] lg:text-[12.5px] text-ink leading-relaxed px-5">
+            <p className="m-0 mb-3.5 text-[15px] text-ink leading-relaxed px-5">
                 {massage.desc}
             </p>
 
-            <div className="flex flex-col gap-1 mb-3.5 px-5 text-[15px] lg:text-[12.5px] text-ink">
-                <div className="flex justify-between gap-2.5">
-                    <span>{massage.duration1}</span>
-                    <span>{massage.price1}</span>
-                </div>
-                {massage.duration2 && (
-                    <div className="flex justify-between gap-2.5">
-                        <span>{massage.duration2}</span>
-                        <span>{massage.price2}</span>
+            <div className="flex flex-col gap-1 mb-3.5 px-5 text-[15px] text-ink">
+                {!massage.comingSoon && massage.options.map((option) => (
+                    <div className="flex justify-between gap-2.5" key={option.duration}>
+                        <span>
+                            {option.duration}
+                            {option.title && <span className="text-olive"> · {option.title}</span>}
+                        </span>
+                        {option.price && <span>{option.price}</span>}
                     </div>
-                )}
+                ))}
             </div>
 
             <div className="px-5 flex justify-center mt-6">
-                <Button size="small" buttonText="Mehr erfahren" link={href} buttonStyle="onLightBackground" hoverStyle="oliveFill" />
+                {isComingSoon ? (
+                    <span className="text-[13px] font-semibold uppercase tracking-wider text-olive border border-olive/40 rounded-full px-4 py-2">
+                        Demnächst
+                    </span>
+                ) : (
+                    <Button size="small" buttonText="Mehr erfahren" link={massagePath(massage.slug)} buttonStyle="onLightBackground" hoverStyle="oliveFill" />
+                )}
             </div>
         </article>
     );

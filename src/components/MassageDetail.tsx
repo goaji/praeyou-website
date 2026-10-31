@@ -1,4 +1,4 @@
-import { Massage } from "@/app/leistungen/massagesData";
+import type { AvailableMassage } from "@/app/leistungen/massagesData";
 import Image from "next/image";
 import Button from "./Button";
 import Prose from "./Prose";
@@ -9,8 +9,8 @@ import { massagePath, routes } from "@/lib/routes";
 import { MEDIA_MIN_LG } from "@/lib/breakpoints";
 
 type MassageDetailsProps = {
-    massage: Massage;
-    others: Massage[];
+    massage: AvailableMassage;
+    others: AvailableMassage[];
 };
 
 
@@ -41,25 +41,28 @@ export default function MassageDetails({ massage, others }: MassageDetailsProps)
                     <Divider className="mb-5" />
                     <Prose className="mb-8">
                         <p className="italic text-[17px]">{massage.hook}</p>
-                        <p>{massage.desc}</p>
+                        {massage.body.map((paragraph) => <p key={paragraph}>{paragraph}</p>)}
                     </Prose>
-                    <div className="h-px bg-ink/10 mb-5" />
+                    <div className="h-px bg-ink/10" />
 
-                    <div className="flex gap-6 mb-10 justify-center">
-                        <div className="flex flex-col justify-center mx-auto">
-                            <span className="text-[16px] uppercase text-ink">{massage.duration1}</span>
-                            <span className="text-[36px] font-serif text-ink">{massage.price1}</span>
-                        </div>
-                        {massage.duration2 && (
-                            <>
-                                <div className="w-px h-10 bg-ink/10" />
-                                <div className="flex flex-col justify-center mx-auto">
-                                    <span className="text-[16px] uppercase text-ink">{massage.duration2}</span>
-                                    <span className="text-[36px] font-serif text-ink">{massage.price2}</span>
+                    <ul className="mb-8">
+                        {massage.options.map((option) => (
+                            <li key={option.duration} className="flex items-center justify-between gap-6 py-4 border-b border-ink/10">
+                                <div className="flex flex-col">
+                                    <span className="text-[16px] uppercase text-ink">
+                                        {option.duration}
+                                        {option.title && <span className="normal-case text-olive"> – {option.title}</span>}
+                                    </span>
+                                    {option.note && <span className="text-[15px] text-ink/80 mt-1">{option.note}</span>}
                                 </div>
-                            </>
-                        )}
-                    </div>
+                                {option.price && <span className="text-[32px] font-serif text-ink shrink-0">{option.price}</span>}
+                            </li>
+                        ))}
+                    </ul>
+
+                    {massage.closing && (
+                        <p className="italic text-[17px] text-center text-ink mb-8">{massage.closing}</p>
+                    )}
                     <div className="flex justify-center">
                         <Button size="medium" buttonText="Termin anfragen" link={routes.kontakt} buttonStyle="onLightBackground" hoverStyle="oliveFill" />
                     </div>
@@ -72,8 +75,8 @@ export default function MassageDetails({ massage, others }: MassageDetailsProps)
                     Weitere Massagen
                 </p>
                 <div className="flex flex-wrap justify-center gap-3">
-                    {others.map((o) => (
-                        <Button size="small" buttonText={o.name} link={massagePath(o.slug)} buttonStyle="onLightBackground" hoverStyle="oliveFill" key={o.slug} />
+                    {others.map((other) => (
+                        <Button size="small" buttonText={other.name} link={massagePath(other.slug)} buttonStyle="onLightBackground" hoverStyle="oliveFill" key={other.slug} />
                     ))}
                 </div>
             </section>
