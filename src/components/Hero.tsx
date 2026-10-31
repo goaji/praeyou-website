@@ -19,16 +19,32 @@ const PARAGRAPH_STAGGER = 2.4;
 // Seconds between "Du" and "zuerst." starting to fade in
 const HEADLINE_WORD_GAP = 1.5;
 
+// Seconds between "zuerst." and the button starting to fade in
+const BUTTON_GAP = 1.5;
+
 export default function Hero() {
   return (
     // reducedMotion="user": respects the visitor's "reduce motion" system setting
     <MotionConfig reducedMotion="user">
       <section className="relative min-h-svh flex flex-col overflow-hidden">
+        {/* Photo "highlights" curve, like the Highlights slider in a photo editor:
+            dark and mid tones stay as they are, only the brightest parts (the window) are toned down,
+            so the white text stands out without dimming the whole picture.
+            tableValues = output brightness at input 0%, 25%, 50%, 75%, 100%. */}
+        <svg aria-hidden="true" className="absolute h-0 w-0">
+          <filter id="hero-highlights" colorInterpolationFilters="sRGB">
+            <feComponentTransfer>
+              <feFuncR type="table" tableValues="0 0.22 0.47 0.6 0.65" />
+              <feFuncG type="table" tableValues="0 0.22 0.47 0.6 0.65" />
+              <feFuncB type="table" tableValues="0 0.22 0.47 0.6 0.65" />
+            </feComponentTransfer>
+          </filter>
+        </svg>
         <Image
           src="/heroImage.jpeg"
           alt="Massagebehandlung"
           className="object-cover z-0"
-          style={{ filter: "saturate(1.1) sepia(0.06) contrast(1.05)" }}
+          style={{ filter: "url(#hero-highlights) saturate(1.25) sepia(0.06) contrast(1.12)" }}
           fill
         />
         {/* Terracotta tint: warms up the grey-green tones of the photo */}
@@ -44,7 +60,7 @@ export default function Hero() {
           className="absolute inset-0 z-1"
           style={{
             background:
-              "linear-gradient(180deg, rgba(36,20,12,0.45) 0%, rgba(36,20,12,0.25) 30%, rgba(36,20,12,0.35) 70%, rgba(36,20,12,0.65) 100%)",
+              "linear-gradient(180deg, rgba(36,20,12,0.4) 0%, rgba(36,20,12,0.1) 25%, rgba(36,20,12,0.1) 70%, rgba(36,20,12,0.5) 100%)",
           }}
         />
         <div className="relative z-50">
@@ -56,7 +72,7 @@ export default function Hero() {
             className="absolute inset-y-[-10%] inset-x-[-20%] z-[-1]"
             style={{
               background:
-                "radial-gradient(ellipse at center, rgba(15,16,10,0.55) 0%, rgba(15,16,10,0.25) 55%, rgba(15,16,10,0) 75%)",
+                "radial-gradient(ellipse at center, rgba(36,20,12,0.4) 0%, rgba(36,20,12,0.15) 55%, rgba(36,20,12,0) 75%)",
             }}
           />
           <div
@@ -105,7 +121,19 @@ export default function Hero() {
             ))}
           </h1>
         </div>
-        <div className="relative z-10 flex justify-center pt-8 pb-10 sm:pb-14">
+        <motion.div
+          className="relative z-10 flex justify-center pt-8 pb-10 sm:pb-14"
+          initial={{ opacity: 0, y: 14 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{
+            duration: 2,
+            ease: "easeOut",
+            delay:
+              heroParagraphs.length * PARAGRAPH_STAGGER +
+              HEADLINE_WORD_GAP +
+              BUTTON_GAP,
+          }}
+        >
           <Button
             buttonText="Mehr erfahren"
             filledFromStart
@@ -113,7 +141,7 @@ export default function Hero() {
             buttonStyle="onDarkBackground"
             hoverStyle="redFill"
           />
-        </div>
+        </motion.div>
       </section>
     </MotionConfig>
   );
