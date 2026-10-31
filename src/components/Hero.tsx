@@ -67,7 +67,7 @@ export default function Hero() {
           <Header />
         </div>
 
-        <div className="relative z-10 flex-1 flex flex-col items-center justify-center text-center px-6 sm:px-10 pt-28 lg:pt-0">
+        <div className="relative z-10 flex-1 flex flex-col items-center justify-center text-center px-6 sm:px-10 pt-28 lg:pt-32">
           <div
             className="absolute inset-y-[-10%] inset-x-[-20%] z-[-1]"
             style={{
