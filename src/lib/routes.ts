@@ -17,7 +17,6 @@ export const massagePath = (slug: string) => `${routes.leistungen}/${slug}`;
 
 /** Order and labels of the main navigation. Every key must be a route. */
 export const navLinks = [
-    { key: "home", label: "Home" },
     { key: "uber", label: "Über mich" },
     { key: "leistungen", label: "Leistungen" },
     { key: "vorDerBehandlung", label: "Hinweise" },

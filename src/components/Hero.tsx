@@ -64,7 +64,7 @@ export default function Hero() {
           }}
         />
         <div className="relative z-50">
-          <Header activeLink="home" />
+          <Header />
         </div>
 
         <div className="relative z-10 flex-1 flex flex-col items-center justify-center text-center px-6 sm:px-10 pt-28 lg:pt-0">
