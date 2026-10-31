@@ -6,7 +6,6 @@ export const routes = {
     home: "/",
     uber: "/uber",
     leistungen: "/leistungen",
-    praxis: "/praxis",
     kontakt: "/#kontakt",
     impressum: "/impressum",
     datenschutz: "/datenschutz",
@@ -22,7 +21,6 @@ export const navLinks = [
     { key: "uber", label: "Über mich" },
     { key: "leistungen", label: "Leistungen" },
     { key: "vorDerBehandlung", label: "Hinweise" },
-    { key: "praxis", label: "Praxis" },
 ] as const satisfies readonly { key: keyof typeof routes; label: string }[];
 
 /** Pages that appear in the main navigation (and can be highlighted in the header). */
