@@ -47,33 +47,26 @@ export default function UberPage() {
               Gründerin von PräYou.
             </p>
             <p>
-              Hauptberuflich komme ich aus dem technischen Vertrieb – ein Alltag
-              geprägt von Verantwortung, Tempo, Reisen und ständiger
-              Erreichbarkeit. Ich kenne die stressige Seite des Lebens daher
-              sehr gut und weiß aus eigener Erfahrung, wie schnell man im
-              Funktionieren den Kontakt zu sich selbst verlieren kann.
-            </p>
-            <p>Genau daraus entstand meine Vision.</p>
-            <p>
-              Ich möchte einen Ort schaffen, an dem Menschen zur Ruhe kommen.
-              Einen Raum, in dem nicht Leistung zählt, sondern Wahrnehmung.
+              In meiner Freizeit bin ich gerne in Bewegung – ob auf dem Rennrad,
+              beim Spinning, Krafttraining, Yoga oder draußen in den Bergen.
+              Genauso genieße ich gemütliche Abende mit Freunden und gutes
+              Essen.
             </p>
             <p>
-              In meiner Arbeit verbinde ich fundiertes Fachwissen mit einem
-              ganzheitlichen Blick auf den Menschen. Jede Massage passe ich
-              individuell an – achtsam, intuitiv und auf deine Bedürfnisse
-              abgestimmt.
+              Besonders fasziniert mich der menschliche Körper - wie alles
+              miteinander zusammenhängt und was wir selbst dazu beitragen
+              können, auch in einem oft hektischen und fordernden Alltag gesund
+              und ausgeglichen zu bleiben.
             </p>
             <p>
-              Als naturverbundener und aktiver Mensch glaube ich an die Kraft
-              von Balance, Bewegung und echter Regeneration.
+              Genau diese Begeisterung für Bewegung, Entspannung und Prävention
+              steckt auch in PRÄYou.
             </p>
 
             <div className="mt-4 flex flex-col gap-1">
               <p className="font-serif text-2xl text-red">
                 PräYou – Du zuerst.
               </p>
-              <p>Das ist nicht nur mein Name, das ist meine Haltung.</p>
             </div>
           </Prose>
 
@@ -86,7 +79,12 @@ export default function UberPage() {
             className="mt-10 self-start"
             aria-label="Zertifiziert von der DAfMP (öffnet fachpraktiker.de in einem neuen Tab)"
           >
-            <Image src="/about/dafmp-siegel.png" alt="Zertifiziert von der DAfMP" width={120} height={135} />
+            <Image
+              src="/about/dafmp-siegel.png"
+              alt="Zertifiziert von der DAfMP"
+              width={120}
+              height={135}
+            />
           </a>
         </div>
       </main>
