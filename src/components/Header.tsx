@@ -19,7 +19,7 @@ type HeaderState = "menuOpen" | "transparent" | "solid";
 const wrapperClasses: Record<HeaderState, string> = {
     // An open menu always gets a solid background, even on top of the hero image.
     menuOpen: "bg-cream py-4",
-    transparent: "bg-transparent py-6 lg:py-8",
+    transparent: "bg-transparent py-4",
     solid: "bg-cream/80 backdrop-blur-sm py-4",
 };
 
