@@ -44,7 +44,7 @@ export default function MassagePreviewCard({ massage }: { massage: Massage }) {
                 )}
             </LinkIfAvailable>
 
-            <h3 className={`m-0 mt-5 mb-1 font-serif text-[26px] font-extrabold px-5 ${isComingSoon ? "text-red/60" : "text-red"}`}>
+            <h3 className="m-0 mt-5 mb-1 font-serif text-[26px] font-extrabold px-5 text-red">
                 <LinkIfAvailable href={href}>{massage.name}</LinkIfAvailable>
                 {/* The image badge is aria-hidden, so screen readers get the status here */}
                 {isComingSoon && <span className="sr-only"> (Demnächst verfügbar)</span>}

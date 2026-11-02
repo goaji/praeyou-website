@@ -104,6 +104,7 @@ export default function Header({ activeLink, background = "dark" }: HeaderProps)
                     <Button
                         buttonText="Termin anfragen"
                         link={routes.kontakt}
+                        size="header"
                         buttonStyle={isTransparent ? "onDarkBackground" : "onLightBackground"}
                         hoverStyle={isTransparent ? "redFill" : "oliveFill"}
                     />
