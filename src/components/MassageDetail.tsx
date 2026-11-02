@@ -22,7 +22,7 @@ export default function MassageDetails({ massage, others }: MassageDetailsProps)
                 {/* Phones/tablets: a cropped banner on top. Desktop: fills the left column at full text height. */}
                 <div className="relative overflow-hidden aspect-[16/10] sm:aspect-[2/1] lg:aspect-auto">
                     <Image
-                        src={massage.imagePreview}
+                        src={massage.image}
                         alt={massage.name}
                         fill
                         sizes={`${MEDIA_MIN_LG} 50vw, 100vw`}

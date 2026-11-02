@@ -15,7 +15,9 @@ type MassageBase = {
   /** Short text for the card on /leistungen. */
   desc: string;
   icon: "leaf" | "body" | "drop" | "spine" | "face";
+  /** Landscape 16:9 (e.g. 1600×900), shown on the card on /leistungen. */
   imagePreview: string;
+  /** Portrait 4:5 (e.g. 1600×2000), shown on the detail page. */
   image: string;
 };
 
@@ -52,8 +54,8 @@ export const massages: Massage[] = [
     ],
     closing: "Denn nicht du sollst zu meiner Massage passen, sondern die Massage zu dir.",
     icon: "leaf",
-    imagePreview: "/massages/massage_1_preview.jpg",
-    image: "/massages/massage_1.jpg",
+    imagePreview: "/massages/praeyou_preview.jpg",
+    image: "/massages/praeyou.jpg",
     options: [
       {
         duration: "30 Minuten",
@@ -86,8 +88,8 @@ export const massages: Massage[] = [
       "Mit PräFlow möchte ich dir diese sanfte Form der Massage anbieten – als nichtmedizinische Anwendung zur Entspannung und zum allgemeinen Wohlbefinden.",
     ],
     icon: "drop",
-    imagePreview: "/massages/massage_3_preview.jpg",
-    image: "/massages/massage_3.jpg",
+    imagePreview: "/massages/praeflow_preview.jpg",
+    image: "/massages/praeflow.jpg",
     options: [{ duration: "60 Minuten", price: "79 €" }],
   },
   {
@@ -96,8 +98,8 @@ export const massages: Massage[] = [
     subtitle: "Entlastende Wirbelsäulenmassage nach Breuss",
     desc: "Sanfte, fließende Ausstreichungen entlang der Wirbelsäule entlasten Rücken und Nervensystem. Eine achtsame Technik, die Druck nimmt und ein Gefühl von Weite und Ruhe hinterlässt.",
     icon: "spine",
-    imagePreview: "/massages/massage_4_preview.jpg",
-    image: "/massages/massage_4.jpg",
+    imagePreview: "/massages/praeraum_preview.jpg",
+    image: "/massages/praeraum.jpg",
     comingSoon: true,
   },
 ];

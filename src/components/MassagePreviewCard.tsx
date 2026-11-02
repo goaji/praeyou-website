@@ -29,7 +29,7 @@ export default function MassagePreviewCard({ massage }: { massage: Massage }) {
         <article className="grid grid-rows-subgrid row-span-7 pb-14 lg:pb-0">
             <LinkIfAvailable href={href} className="relative block overflow-hidden aspect-video" tabIndex={-1} aria-hidden="true">
                 <Image
-                    src={massage.image}
+                    src={massage.imagePreview}
                     alt={massage.name}
                     fill
                     sizes={`${MEDIA_MIN_LG} 33vw, ${MEDIA_MIN_SM} 50vw, 100vw`}
