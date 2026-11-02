@@ -2,18 +2,17 @@ import type { ComponentProps } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import type { Massage } from "@/app/leistungen/massagesData";
-import { MassageIcon } from "@/components/MassageIcon";
 import Button from "./Button";
 import { massagePath } from "@/lib/routes";
 import { MEDIA_MIN_LG, MEDIA_MIN_SM } from "@/lib/breakpoints";
 
 /**
  * One card in the /leistungen grid.
- * The card is a subgrid spanning 7 rows of the parent grid, so image, icon, title,
+ * The card is a subgrid spanning 6 rows of the parent grid, so image, title,
  * subtitle, description, prices and button line up across all cards in a row.
- * `row-span-7` must equal the number of direct children below: adding or removing
+ * `row-span-6` must equal the number of direct children below: adding or removing
  * one means updating it, otherwise the row alignment breaks silently.
- * A "coming soon" massage keeps all 7 rows but has no links and no prices.
+ * A "coming soon" massage keeps all 6 rows but has no links and no prices.
  */
 /** A link to the detail page, or plain content (no link) when `href` is undefined. */
 function LinkIfAvailable({ href, children, ...props }: Omit<ComponentProps<typeof Link>, "href"> & { href?: string }) {
@@ -26,8 +25,8 @@ export default function MassagePreviewCard({ massage }: { massage: Massage }) {
     const href = isComingSoon ? undefined : massagePath(massage.slug);
 
     return (
-        <article className="grid grid-rows-subgrid row-span-7 pb-14 lg:pb-0">
-            <LinkIfAvailable href={href} className="relative block overflow-hidden aspect-video" tabIndex={-1} aria-hidden="true">
+        <article className="grid grid-rows-subgrid row-span-6 pb-14 lg:pb-0">
+            <LinkIfAvailable href={href} className="relative block overflow-hidden aspect-3/2" tabIndex={-1} aria-hidden="true">
                 <Image
                     src={massage.imagePreview}
                     alt={massage.name}
@@ -37,13 +36,7 @@ export default function MassagePreviewCard({ massage }: { massage: Massage }) {
                 />
             </LinkIfAvailable>
 
-            <div className="px-5 mt-5 mb-3">
-                <div className="w-9.5 h-9.5 rounded-full bg-red/20 flex items-center justify-center shrink-0 text-olive">
-                    <MassageIcon icon={massage.icon} size={19} />
-                </div>
-            </div>
-
-            <h3 className={`m-0 mb-1 font-serif text-[26px] font-extrabold px-5 ${isComingSoon ? "text-red/60" : "text-red"}`}>
+            <h3 className={`m-0 mt-5 mb-1 font-serif text-[26px] font-extrabold px-5 ${isComingSoon ? "text-red/60" : "text-red"}`}>
                 <LinkIfAvailable href={href}>{massage.name}</LinkIfAvailable>
             </h3>
 

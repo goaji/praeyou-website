@@ -15,7 +15,7 @@ type MassageBase = {
   /** Short text for the card on /leistungen. */
   desc: string;
   icon: "leaf" | "body" | "drop" | "spine" | "face";
-  /** Landscape 16:9 (e.g. 1600×900), shown on the card on /leistungen. */
+  /** Landscape 3:2 (e.g. 1800×1200), shown on the card on /leistungen. */
   imagePreview: string;
   /** Portrait 4:5 (e.g. 1600×2000), shown on the detail page. */
   image: string;
