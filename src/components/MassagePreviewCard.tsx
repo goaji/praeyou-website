@@ -12,7 +12,8 @@ import { MEDIA_MIN_LG, MEDIA_MIN_SM } from "@/lib/breakpoints";
  * subtitle, description, prices and button line up across all cards in a row.
  * `row-span-6` must equal the number of direct children below: adding or removing
  * one means updating it, otherwise the row alignment breaks silently.
- * A "coming soon" massage keeps all 6 rows but has no links and no prices.
+ * A "coming soon" massage keeps all 6 rows but has no links, no prices and no button;
+ * a "Demnächst verfügbar" badge sits over its faded image instead.
  */
 /** A link to the detail page, or plain content (no link) when `href` is undefined. */
 function LinkIfAvailable({ href, children, ...props }: Omit<ComponentProps<typeof Link>, "href"> & { href?: string }) {
@@ -34,10 +35,19 @@ export default function MassagePreviewCard({ massage }: { massage: Massage }) {
                     sizes={`${MEDIA_MIN_LG} 33vw, ${MEDIA_MIN_SM} 50vw, 100vw`}
                     className={`object-cover ${isComingSoon ? "grayscale-[60%] opacity-70" : ""}`}
                 />
+                {isComingSoon && (
+                    <div className="absolute inset-0 flex items-center justify-center">
+                        <span className="bg-cream text-olive text-[13px] font-semibold uppercase tracking-wider rounded-full px-5 py-2 shadow-sm">
+                            Demnächst verfügbar
+                        </span>
+                    </div>
+                )}
             </LinkIfAvailable>
 
             <h3 className={`m-0 mt-5 mb-1 font-serif text-[26px] font-extrabold px-5 ${isComingSoon ? "text-red/60" : "text-red"}`}>
                 <LinkIfAvailable href={href}>{massage.name}</LinkIfAvailable>
+                {/* The image badge is aria-hidden, so screen readers get the status here */}
+                {isComingSoon && <span className="sr-only"> (Demnächst verfügbar)</span>}
             </h3>
 
             <p className="m-0 mb-2 text-[13px] font-semibold text-olive px-5">
@@ -60,12 +70,9 @@ export default function MassagePreviewCard({ massage }: { massage: Massage }) {
                 ))}
             </div>
 
+            {/* Stays in the DOM even when empty: it is the 6th subgrid row */}
             <div className="px-5 flex justify-center mt-6">
-                {isComingSoon ? (
-                    <span className="text-[13px] font-semibold uppercase tracking-wider text-olive border border-olive/40 rounded-full px-4 py-2">
-                        Demnächst
-                    </span>
-                ) : (
+                {!isComingSoon && (
                     <Button size="small" buttonText="Mehr erfahren" link={massagePath(massage.slug)} buttonStyle="onLightBackground" hoverStyle="oliveFill" />
                 )}
             </div>

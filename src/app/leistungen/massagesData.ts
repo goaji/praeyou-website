@@ -14,7 +14,6 @@ type MassageBase = {
   subtitle: string;
   /** Short text for the card on /leistungen. */
   desc: string;
-  icon: "leaf" | "body" | "drop" | "spine" | "face";
   /** Landscape 3:2 (e.g. 1800×1200), shown on the card on /leistungen. */
   imagePreview: string;
   /** Portrait 4:5 (e.g. 1600×2000), shown on the detail page. */
@@ -33,7 +32,7 @@ export type AvailableMassage = MassageBase & {
   options: MassageOption[];
 };
 
-/** Shown as "Demnächst" on /leistungen, without prices or a detail page. */
+/** Shown with a "Demnächst verfügbar" badge on /leistungen, without prices or a detail page. */
 export type ComingSoonMassage = MassageBase & {
   comingSoon: true;
 };
@@ -53,7 +52,6 @@ export const massages: Massage[] = [
       "Du entscheidest, wie viel Zeit du dir nehmen möchtest und welche Körperbereiche im Mittelpunkt stehen.",
     ],
     closing: "Denn nicht du sollst zu meiner Massage passen, sondern die Massage zu dir.",
-    icon: "leaf",
     imagePreview: "/massages/praeyou_preview.jpg",
     image: "/massages/praeyou.jpg",
     options: [
@@ -87,17 +85,15 @@ export const massages: Massage[] = [
       "Bei der präventiven Lymphdrainage werden sanfte, rhythmische Griffe eingesetzt, die den natürlichen Lymphfluss anregen und den Abtransport von Gewebeflüssigkeit unterstützen können.",
       "Mit PräFlow möchte ich dir diese sanfte Form der Massage anbieten – als nichtmedizinische Anwendung zur Entspannung und zum allgemeinen Wohlbefinden.",
     ],
-    icon: "drop",
     imagePreview: "/massages/praeflow_preview.jpg",
     image: "/massages/praeflow.jpg",
     options: [{ duration: "60 Minuten", price: "79 €" }],
   },
   {
-    name: "PräRaum",
-    slug: "praeraum",
+    name: "PräRelease",
+    slug: "praerelease",
     subtitle: "Entlastende Wirbelsäulenmassage nach Breuss",
     desc: "Sanfte, fließende Ausstreichungen entlang der Wirbelsäule entlasten Rücken und Nervensystem. Eine achtsame Technik, die Druck nimmt und ein Gefühl von Weite und Ruhe hinterlässt.",
-    icon: "spine",
     imagePreview: "/massages/praeraum_preview.jpg",
     image: "/massages/praeraum.jpg",
     comingSoon: true,
