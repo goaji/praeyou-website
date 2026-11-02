@@ -15,7 +15,7 @@ function getNavItemClasses(variant: NavItemProps["variant"], isActive: boolean, 
         return `block py-3 text-xl tracking-wide border-b border-ink/5 ${isActive ? "text-red" : "text-ink"}`;
     }
     if (isActive) {
-        return `${onDark ? "text-gold" : "text-red"} border-b border-gold pb-0.5`;
+        return "text-red border-b border-red pb-0.5";
     }
     return onDark ? "text-cream" : "text-ink";
 }
