@@ -90,7 +90,11 @@ export default function Button({ buttonText, link, size = "medium", buttonStyle,
             ${hoveredBackgroundColor} 
             ${hoveredTextColor} hover:font-bold`}
         >
-            {buttonText}
+            {/* An invisible bold copy reserves the bold width, so the button doesn't grow (and push its neighbours) on hover */}
+            <span className="inline-grid justify-items-center">
+                <span className="col-start-1 row-start-1 invisible font-bold" aria-hidden="true">{buttonText}</span>
+                <span className="col-start-1 row-start-1">{buttonText}</span>
+            </span>
         </Link>
     )
 }
