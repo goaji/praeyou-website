@@ -9,7 +9,6 @@ import {
 import Image from "next/image";
 import { useState } from "react";
 import { cameFromInsideSite } from "@/lib/firstPage";
-import Header from "./Header";
 import Button from "./Button";
 import WomenOnlyBadge from "./WomenOnlyBadge";
 import { routes } from "@/lib/routes";
@@ -112,10 +111,6 @@ export default function Hero() {
               "linear-gradient(180deg, rgba(36,20,12,0.4) 0%, rgba(36,20,12,0.1) 25%, rgba(36,20,12,0.1) 70%, rgba(36,20,12,0.5) 100%)",
           }}
         />
-        <div className="relative z-50">
-          <Header />
-        </div>
-
         <div className="relative z-10 flex-1 flex flex-col items-center justify-center text-center px-6 sm:px-10 pt-28 lg:pt-32">
           <div
             className="absolute inset-y-[-10%] inset-x-[-20%] z-[-1]"
