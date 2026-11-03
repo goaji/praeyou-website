@@ -5,7 +5,7 @@ import Footer from "@/components/Footer";
 import Prose from "@/components/Prose";
 import PageTitle from "@/components/PageTitle";
 import { BRAND } from "@/lib/contact";
-import { MEDIA_MIN_MD } from "@/lib/breakpoints";
+import { MEDIA_MIN_SM } from "@/lib/breakpoints";
 import { CONTAINER, PAGE_TOP } from "@/lib/layout";
 
 export const metadata: Metadata = {
@@ -17,22 +17,8 @@ export default function UberPage() {
   return (
     <div className="bg-cream text-ink">
       <Header background="light" activeLink="uber" />
-      <main
-        className={`${CONTAINER} ${PAGE_TOP} pb-20 grid grid-cols-1 md:grid-cols-[2fr_3fr] gap-10 lg:gap-16 items-start`}
-      >
-        {/* Phones: the portrait comes after the text and lines up left with it. From 768px: portrait on the left. */}
-        <div className="relative w-full aspect-2/3 max-w-md md:mx-auto overflow-hidden rounded-md order-last md:order-first">
-          <Image
-            src="/about/tina.jpg"
-            alt={`Tina, Gründerin von ${BRAND}`}
-            fill
-            sizes={`${MEDIA_MIN_MD} 40vw, 100vw`}
-            className="object-cover"
-            fetchPriority="high"
-          />
-        </div>
-
-        <div className="flex flex-col max-w-xl">
+      <main className={`${CONTAINER} ${PAGE_TOP} pb-20`}>
+        <div className="flex flex-col max-w-xl mx-auto">
           <PageTitle>Über mich</PageTitle>
 
           <Prose>
@@ -41,6 +27,18 @@ export default function UberPage() {
               Verbindung zu uns selbst, innere Klarheit und die Erinnerung
               daran, wie wertvoll wir sind.“
             </blockquote>
+
+            {/* Portrait inside the text, between the quote and the introduction (owner's request). */}
+            <div className="relative w-full max-w-sm aspect-2/3 my-4 overflow-hidden rounded-md">
+              <Image
+                src="/about/tina.jpg"
+                alt={`Tina, Gründerin von ${BRAND}`}
+                fill
+                sizes={`${MEDIA_MIN_SM} 384px, 100vw`}
+                className="object-cover"
+                fetchPriority="high"
+              />
+            </div>
 
             <p>
               Ich bin Tina, Fachpraktikerin für Wellness und Prävention und
