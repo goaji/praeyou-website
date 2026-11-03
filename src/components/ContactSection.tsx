@@ -1,6 +1,6 @@
 import type { ReactNode } from "react";
 import { bookingMessage, contact, emailLink, phoneLink, whatsappLink } from "@/lib/contact";
-import { PostalAddress } from "./ContactInfo";
+import { LegalAddress } from "./ContactInfo";
 import BeforeTreatmentLink from "./BeforeTreatmentLink";
 import { CONTAINER } from "@/lib/layout";
 
@@ -81,7 +81,9 @@ export default function ContactSection() {
                     <BeforeTreatmentLink className="mb-7" />
                     <address className="not-italic text-[15px] text-ink">
                         <span className="block text-[11px] tracking-widest uppercase text-olive mb-1">Adresse</span>
-                        <PostalAddress />
+                        <div className="flex flex-col gap-3">
+                            <LegalAddress />
+                        </div>
                     </address>
                 </div>
 

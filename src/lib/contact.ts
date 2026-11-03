@@ -7,7 +7,7 @@ export const BRAND = "PräYou";
 export const contact = {
     /** Full legal name of the owner, required in the Impressum. */
     legalName: "Augustina Betz",
-    businessName: `${BRAND} – Massage & Prävention`,
+    businessName: `${BRAND} – Massage und Prävention`,
     /** The studio's number in international format (+49…), no spaces. Used for calls and, by default, WhatsApp. */
     phone: "+4916090376628",
     /** The same number, formatted for display. Keep in sync with `phone`. */

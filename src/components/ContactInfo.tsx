@@ -21,15 +21,23 @@ export function EmailLink() {
     return <a href={emailLink} className="underline">{contact.email}</a>;
 }
 
-/** Owner, business name and postal address, as required on the legal pages. */
+/**
+ * The studio's details in the owner's layout (contact section, Impressum, Datenschutz):
+ * business name and owner, then (after a blank line) address and phone.
+ */
 export function LegalAddress() {
     return (
-        <p>
-            {contact.legalName}
-            <br />
-            {contact.businessName}
-            <br />
-            <PostalAddress />
-        </p>
+        <>
+            <p>
+                <strong>{contact.businessName}</strong>
+                <br />
+                Inh. {contact.legalName}
+            </p>
+            <p>
+                <PostalAddress />
+                <br />
+                Telefon: <PhoneLink />
+            </p>
+        </>
     );
 }

@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import TextPage, { TextSection } from "@/components/TextPage";
-import { EmailLink, LegalAddress, PhoneLink } from "@/components/ContactInfo";
+import { EmailLink, LegalAddress } from "@/components/ContactInfo";
 
 export const metadata: Metadata = {
   title: "Impressum",
@@ -17,8 +17,6 @@ export default function ImpressumPage() {
 
       <TextSection heading="Kontakt">
         <p>
-          Telefon: <PhoneLink />
-          <br />
           E-Mail: <EmailLink />
         </p>
       </TextSection>
