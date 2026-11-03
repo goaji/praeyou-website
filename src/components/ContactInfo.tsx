@@ -1,3 +1,4 @@
+import type { ReactNode } from "react";
 import { contact, emailLink, phoneLink } from "@/lib/contact";
 
 /** Street and city on two lines. Place inside a <p> or <address>. */
@@ -24,8 +25,9 @@ export function EmailLink() {
 /**
  * The studio's details in the owner's layout (contact section, Impressum, Datenschutz):
  * business name and owner, then (after a blank line) address and phone.
+ * `addressLabel` (contact section only) is shown between the two, right above the street.
  */
-export function LegalAddress() {
+export function LegalAddress({ addressLabel }: { addressLabel?: ReactNode }) {
     return (
         <>
             <p>
@@ -33,11 +35,14 @@ export function LegalAddress() {
                 <br />
                 Inh. {contact.legalName}
             </p>
-            <p>
-                <PostalAddress />
-                <br />
-                Telefon: <PhoneLink />
-            </p>
+            <div>
+                {addressLabel}
+                <p>
+                    <PostalAddress />
+                    <br />
+                    Telefon: <PhoneLink />
+                </p>
+            </div>
         </>
     );
 }

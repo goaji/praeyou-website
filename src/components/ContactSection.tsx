@@ -80,9 +80,12 @@ export default function ContactSection() {
                     </div>
                     <BeforeTreatmentLink className="mb-7" />
                     <address className="not-italic text-[15px] text-ink">
-                        <span className="block text-[11px] tracking-widest uppercase text-olive mb-1">Adresse</span>
                         <div className="flex flex-col gap-3">
-                            <LegalAddress />
+                            <LegalAddress
+                                addressLabel={
+                                    <span className="block text-[11px] tracking-widest uppercase text-olive mb-1">Adresse</span>
+                                }
+                            />
                         </div>
                     </address>
                 </div>
