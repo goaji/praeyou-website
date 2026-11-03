@@ -1,6 +1,11 @@
 "use client";
 
-import { MotionConfig, motion, useReducedMotion, type Transition } from "framer-motion";
+import {
+  MotionConfig,
+  motion,
+  useReducedMotion,
+  type Transition,
+} from "framer-motion";
 import Image from "next/image";
 import { useState } from "react";
 import { cameFromInsideSite } from "@/lib/firstPage";
@@ -88,11 +93,13 @@ export default function Hero() {
           fill
         />
         {heroPhoto.warmTint && (
-          // Terracotta tint: warms up the grey-green tones of the treatment photo
+          // Terracotta tint: warms up the grey-green tones of the treatment photo.
+          // Kept at the original, lighter terracotta: --color-red was darkened for text contrast,
+          // which would change the photo's look here.
           <div
             className="absolute inset-0 z-1"
             style={{
-              background: "var(--color-red)",
+              background: "#b36a45",
               mixBlendMode: "soft-light",
               opacity: 0.6,
             }}
@@ -122,7 +129,11 @@ export default function Hero() {
             className="mb-10"
             initial={fadeFrom}
             animate={{ opacity: 1, y: 0 }}
-            transition={fade({ duration: 2, ease: "easeOut", delay: BUTTON_DELAY })}
+            transition={fade({
+              duration: 2,
+              ease: "easeOut",
+              delay: BUTTON_DELAY,
+            })}
           >
             <WomenOnlyBadge className="shadow-[0_4px_20px_rgba(0,0,0,0.35)]" />
           </motion.div>
