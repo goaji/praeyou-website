@@ -39,7 +39,7 @@ const buttonStyles: { [key: string]: ButtonStylesType } = {
     onDarkBackground: {
         textColor: "text-cream",
         backgroundColor: "bg-transparent",
-        border: "border-red",
+        border: "border-olive",
     },
 };
 

@@ -139,7 +139,7 @@ export default function Hero() {
             filledFromStart
             link={routes.leistungen}
             buttonStyle="onDarkBackground"
-            hoverStyle="redFill"
+            hoverStyle="oliveFill"
           />
         </motion.div>
       </section>

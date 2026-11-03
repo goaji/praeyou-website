@@ -106,7 +106,7 @@ export default function Header({ activeLink, background = "dark" }: HeaderProps)
                         link={routes.kontakt}
                         size="header"
                         buttonStyle={isTransparent ? "onDarkBackground" : "onLightBackground"}
-                        hoverStyle={isTransparent ? "redFill" : "oliveFill"}
+                        hoverStyle="oliveFill"
                     />
                 </nav>
 
