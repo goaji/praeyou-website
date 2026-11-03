@@ -64,10 +64,8 @@ export default function ContactSection() {
         <section id="kontakt" className="bg-cream py-16 lg:py-24">
             <div className={`${CONTAINER} grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-18 items-start`}>
                 <div className="pt-3">
-                    <span className="text-sm tracking-widest uppercase text-olive font-medium">Termine</span>
-                    <h2 className="font-serif font-medium text-3xl sm:text-4xl my-4 text-ink">
-                        Zeit für dich <em className="italic">reservieren</em>.
-                    </h2>
+                    {/* The small label is the section's heading (the big "Zeit für dich reservieren." was removed at the owner's request) */}
+                    <h2 className="text-sm tracking-widest uppercase text-olive font-medium mb-4">Termine</h2>
                     <div className="text-olive leading-relaxed mb-7 max-w-105 flex flex-col gap-3">
                         <p>
                             Du möchtest einen Termin vereinbaren oder hast noch Fragen? Dann ruf mich
