@@ -26,7 +26,7 @@ export default function TextPage({ title, intro, updated, activeLink, children }
             <main className={`max-w-3xl mx-auto px-5 sm:px-8 pb-20 ${PAGE_TOP}`}>
                 <PageTitle>{title}</PageTitle>
                 {intro && <p className="font-serif italic text-xl leading-snug text-olive mb-8">{intro}</p>}
-                {updated && <p className="text-[13px] text-olive mb-8">Stand: {updated}</p>}
+                {updated && <p className="text-caption text-olive mb-8">Stand: {updated}</p>}
                 <Prose spacing="section">{children}</Prose>
             </main>
             <Footer />

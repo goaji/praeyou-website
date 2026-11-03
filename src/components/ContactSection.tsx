@@ -65,7 +65,7 @@ export default function ContactSection() {
             <div className={`${CONTAINER} grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-18 items-start`}>
                 <div className="pt-3">
                     {/* The small label is the section's heading (the big "Zeit für dich reservieren." was removed at the owner's request) */}
-                    <h2 className="text-sm tracking-widest uppercase text-olive font-medium mb-4">Termine</h2>
+                    <h2 className="text-small tracking-widest uppercase text-olive font-medium mb-4">Termine</h2>
                     <div className="text-olive leading-relaxed mb-7 max-w-105 flex flex-col gap-3">
                         <p>
                             Du möchtest einen Termin vereinbaren oder hast noch Fragen? Dann ruf mich
@@ -77,11 +77,11 @@ export default function ContactSection() {
                         </p>
                     </div>
                     <BeforeTreatmentLink className="mb-7" />
-                    <address className="not-italic text-[15px] text-ink">
+                    <address className="not-italic text-small text-ink">
                         <div className="flex flex-col gap-3">
                             <LegalAddress
                                 addressLabel={
-                                    <span className="block text-[11px] tracking-widest uppercase text-olive mb-1">Adresse</span>
+                                    <span className="block text-label tracking-widest uppercase text-olive mb-1">Adresse</span>
                                 }
                             />
                         </div>
@@ -100,8 +100,8 @@ export default function ContactSection() {
                                     {channel.icon}
                                 </span>
                                 <span className="flex flex-col min-w-0">
-                                    <span className="text-[11px] tracking-widest uppercase text-olive">{channel.label}</span>
-                                    <span className="text-[17px] text-ink truncate">{channel.value}</span>
+                                    <span className="text-label tracking-widest uppercase text-olive">{channel.label}</span>
+                                    <span className="text-lead text-ink truncate">{channel.value}</span>
                                 </span>
                                 <span className="ml-auto text-olive" aria-hidden="true">→</span>
                             </a>

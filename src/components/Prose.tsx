@@ -19,7 +19,7 @@ type ProseProps = {
  */
 export default function Prose({ children, spacing = "paragraph", className = "" }: ProseProps) {
     return (
-        <div className={`flex flex-col text-[16px] leading-relaxed ${spacingClasses[spacing]} ${className}`}>
+        <div className={`flex flex-col text-body leading-relaxed ${spacingClasses[spacing]} ${className}`}>
             {children}
         </div>
     );

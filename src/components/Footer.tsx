@@ -6,7 +6,7 @@ import { CONTAINER } from "@/lib/layout";
 
 export default function Footer() {
     return (
-        <footer className="text-[13px] text-cream bg-olive py-4">
+        <footer className="text-caption text-cream bg-olive py-4">
             <div className={`${CONTAINER} flex flex-col sm:flex-row items-center justify-between gap-5 text-center sm:text-left`}>
                 <div className="flex flex-col sm:flex-row items-center gap-3 sm:gap-4">
                     <Image src="/logo-footer.svg" alt="Präyou" width={930} height={934} className="h-20 lg:h-24 w-auto" />

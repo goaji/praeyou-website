@@ -3,7 +3,7 @@
  */
 export default function WomenOnlyBadge({ className = "" }: { className?: string }) {
     return (
-        <p className={`rounded-full bg-olive px-8 py-3 sm:px-10 sm:py-3.5 text-[15px] sm:text-[18px] font-semibold uppercase tracking-widest text-cream ${className}`}>
+        <p className={`rounded-full bg-olive px-8 py-3 sm:px-10 sm:py-3.5 text-small sm:text-lead font-semibold uppercase tracking-widest text-cream ${className}`}>
             Exklusiv für Frauen
         </p>
     );

@@ -10,6 +10,21 @@
   --color-red: #9e5b3b;
 }
 
+/* Font sizes, in rem so text follows the visitor's browser font-size setting
+   (px sizes ignore it). Each value equals the old px size at the default 16px.
+   Only font-size is set here; line height stays as each component sets it. */
+@theme {
+  --text-label: 0.6875rem;      /* 11px: small uppercase labels (contact section), tagline on phones */
+  --text-caption: 0.8125rem;    /* 13px: subtitles, footer, "Stand", status badge, small buttons, tagline from sm up */
+  --text-small: 0.9375rem;      /* 15px: card text, contact details, payment note, medium buttons, "Termine" heading */
+  --text-body: 1rem;            /* 16px: running text */
+  --text-lead: 1.0625rem;       /* 17px: navigation, hero text on phones, intro lines, "Exklusiv für Frauen" from sm up */
+  --text-hero-body: 1.3125rem;  /* 21px: hero text from sm up */
+  --text-card-title: 1.625rem;  /* 26px: massage card titles */
+  --text-price: 2rem;           /* 32px: prices on the massage pages */
+  --text-hero: 7rem;            /* 112px: "Du zuerst." on desktop */
+}
+
 @theme inline {
   --font-serif: var(--font-serif);
   --font-sans: var(--font-sans);

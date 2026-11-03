@@ -15,9 +15,9 @@ function getNavItemClasses(variant: NavItemProps["variant"], isActive: boolean, 
         return `block py-3 text-xl tracking-wide border-b border-ink/5 ${isActive ? "text-red" : "text-ink"}`;
     }
     if (isActive) {
-        return "text-red border-b border-red pb-0.5";
+        return "whitespace-nowrap text-red border-b border-red pb-0.5";
     }
-    return onDark ? "text-cream" : "text-ink";
+    return `whitespace-nowrap ${onDark ? "text-cream" : "text-ink"}`;
 }
 
 export default function NavItem({ href, label, isActive, variant, onDark = false, onClick }: NavItemProps) {

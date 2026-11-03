@@ -133,7 +133,7 @@ export default function Hero() {
             <WomenOnlyBadge className="shadow-[0_4px_20px_rgba(0,0,0,0.35)]" />
           </motion.div>
           <div
-            className="max-w-2xl mb-7 space-y-4 text-[17px] sm:text-[21px] leading-relaxed text-white"
+            className="max-w-2xl mb-7 space-y-4 text-lead sm:text-hero-body leading-relaxed text-white"
             style={{ textShadow: "0 2px 10px rgba(0,0,0,0.55)" }}
           >
             {heroParagraphs.map((text, i) => (
@@ -152,7 +152,7 @@ export default function Hero() {
             ))}
           </div>
           <h1
-            className="font-hero italic text-6xl sm:text-8xl lg:text-[112px] leading-[0.98] text-white"
+            className="font-hero italic text-6xl sm:text-8xl lg:text-hero leading-[0.98] text-white"
             style={{
               textShadow:
                 "0 6px 30px rgba(0,0,0,0.75), 0 2px 8px rgba(0,0,0,0.6)",

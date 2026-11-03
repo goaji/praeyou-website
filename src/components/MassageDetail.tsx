@@ -36,12 +36,12 @@ export default function MassageDetails({ massage, others }: MassageDetailsProps)
                     <h1 className="font-serif font-medium text-4xl sm:text-5xl text-ink mb-3">
                         {massage.name}
                     </h1>
-                    <p className="text-[13px] font-semibold uppercase tracking-wider text-olive mb-5">
+                    <p className="text-caption font-semibold uppercase tracking-wider text-olive mb-5">
                         {massage.subtitle}
                     </p>
                     <Divider className="mb-5" />
                     <Prose className="mb-8">
-                        <p className="italic text-[17px]">{massage.hook}</p>
+                        <p className="italic text-lead">{massage.hook}</p>
                         {massage.body.map((paragraph) => <p key={paragraph}>{paragraph}</p>)}
                     </Prose>
                     <div className="h-px bg-ink/10" />
@@ -50,18 +50,18 @@ export default function MassageDetails({ massage, others }: MassageDetailsProps)
                         {massage.options.map((option) => (
                             <li key={option.duration} className="flex items-center justify-between gap-6 py-4 border-b border-ink/10">
                                 <div className="flex flex-col">
-                                    <span className="text-[16px] uppercase text-ink">
+                                    <span className="text-body uppercase text-ink">
                                         {option.duration}
                                         {option.title && <span className="normal-case text-olive"> – {option.title}</span>}
                                     </span>
-                                    {option.note && <span className="text-[15px] text-ink/80 mt-1">{option.note}</span>}
+                                    {option.note && <span className="text-small text-ink/80 mt-1">{option.note}</span>}
                                 </div>
-                                {option.price && <span className="text-[32px] font-serif text-ink shrink-0">{option.price}</span>}
+                                {option.price && <span className="text-price font-serif text-ink shrink-0">{option.price}</span>}
                             </li>
                         ))}
                     </ul>
                     {massage.closing && (
-                        <p className="italic text-[17px] text-center text-ink mb-8">{massage.closing}</p>
+                        <p className="italic text-lead text-center text-ink mb-8">{massage.closing}</p>
                     )}
                     <PaymentNote className="mb-8" />
                     <div className="flex justify-center">
@@ -72,7 +72,7 @@ export default function MassageDetails({ massage, others }: MassageDetailsProps)
             </section>
 
             <section className="flex flex-col items-center text-center pt-6 pb-12">
-                <p className="text-[13px] font-semibold uppercase tracking-wider text-olive mb-6">
+                <p className="text-caption font-semibold uppercase tracking-wider text-olive mb-6">
                     Weitere Massagen
                 </p>
                 <div className="flex flex-wrap justify-center gap-3">

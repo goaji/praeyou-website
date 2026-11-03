@@ -37,30 +37,30 @@ export default function MassagePreviewCard({ massage }: { massage: Massage }) {
                 />
                 {isComingSoon && (
                     <div className="absolute inset-0 flex items-center justify-center">
-                        <span className="bg-cream text-olive text-[13px] font-semibold uppercase tracking-wider rounded-full px-5 py-2 shadow-sm">
+                        <span className="bg-cream text-olive text-caption font-semibold uppercase tracking-wider rounded-full px-5 py-2 shadow-sm">
                             Demnächst verfügbar
                         </span>
                     </div>
                 )}
             </LinkIfAvailable>
 
-            <h3 className="m-0 mt-5 mb-1 font-serif text-[26px] font-extrabold px-5 text-red">
+            <h3 className="m-0 mt-5 mb-1 font-serif text-card-title font-extrabold px-5 text-red">
                 <LinkIfAvailable href={href}>{massage.name}</LinkIfAvailable>
                 {/* The image badge is aria-hidden, so screen readers get the status here */}
                 {isComingSoon && <span className="sr-only"> (Demnächst verfügbar)</span>}
             </h3>
 
-            <p className="m-0 mb-2 text-[13px] font-semibold text-olive px-5">
+            <p className="m-0 mb-2 text-caption font-semibold text-olive px-5">
                 {massage.subtitle}
             </p>
 
-            <div className="mb-3.5 text-[15px] text-ink leading-relaxed px-5 flex flex-col gap-2">
+            <div className="mb-3.5 text-small text-ink leading-relaxed px-5 flex flex-col gap-2">
                 {massage.desc.map((paragraph) => (
                     <p className="m-0" key={paragraph}>{paragraph}</p>
                 ))}
             </div>
 
-            <div className="flex flex-col gap-1 mb-3.5 px-5 text-[15px] text-ink">
+            <div className="flex flex-col gap-1 mb-3.5 px-5 text-small text-ink">
                 {!massage.comingSoon && massage.options.map((option) => (
                     <div className="flex justify-between gap-2.5" key={option.duration}>
                         <span>

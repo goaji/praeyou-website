@@ -23,11 +23,11 @@ interface HoveredButtonStylesType extends ButtonStylesType {
 }
 
 const sizeClasses = {
-    small: "text-[12.5px] px-4 py-2.5",
-    medium: "text-[14px] px-8 py-4",
-    large: "text-[16px] px-10 py-5",
+    small: "text-caption px-4 py-2.5",
+    medium: "text-small px-8 py-4",
+    large: "text-body px-10 py-5",
     /** Same text size as the desktop header links (17px), with less vertical padding so the header keeps its height. */
-    header: "text-[17px] px-7 py-3",
+    header: "text-lead px-7 py-3 whitespace-nowrap",
 };
 
 const buttonStyles: { [key: string]: ButtonStylesType } = {

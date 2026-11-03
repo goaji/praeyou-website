@@ -6,7 +6,7 @@ export default function BeforeTreatmentLink({ className = "" }: { className?: st
     return (
         <Link
             href={routes.vorDerBehandlung}
-            className={`inline-block text-[15px] text-ink underline decoration-red underline-offset-4 hover:text-red ${className}`}
+            className={`inline-block text-small text-ink underline decoration-red underline-offset-4 hover:text-red ${className}`}
         >
             Hinweise vor der Behandlung →
         </Link>

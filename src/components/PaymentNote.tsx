@@ -3,7 +3,7 @@ import { paymentNote } from "@/lib/contact";
 /** Highlighted payment info: under the prices on /leistungen, above the booking button on the massage detail pages. */
 export default function PaymentNote({ className = "" }: { className?: string }) {
     return (
-        <p className={`flex items-center gap-3 rounded-md bg-leaf/40 px-5 py-3 text-[15px] text-ink ${className}`}>
+        <p className={`flex items-center gap-3 rounded-md bg-leaf/40 px-5 py-3 text-small text-ink ${className}`}>
             <svg
                 width={20}
                 height={20}

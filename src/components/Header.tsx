@@ -82,7 +82,7 @@ export default function Header({ activeLink, background = "dark" }: HeaderProps)
                     </span>
                     {/* Tagline beside the logo, split from it by a thin line */}
                     <span
-                        className="border-l border-current/40 pl-4 lg:pl-5 py-1 text-[11px] sm:text-xs lg:text-[17px] tracking-widest uppercase whitespace-nowrap transition-colors duration-300"
+                        className="border-l border-current/40 pl-4 lg:pl-5 py-1 text-label sm:text-caption xl:text-lead tracking-widest uppercase whitespace-nowrap transition-colors duration-300"
                         style={isTransparent ? { textShadow: "0 1px 6px rgba(0,0,0,0.5)" } : undefined}
                     >
                         Massage & Prävention
@@ -90,7 +90,7 @@ export default function Header({ activeLink, background = "dark" }: HeaderProps)
                 </Link>
 
                 {/* Desktop navigation */}
-                <nav aria-label="Hauptnavigation" className="hidden lg:flex items-center gap-9 text-[17px] tracking-wide">
+                <nav aria-label="Hauptnavigation" className="hidden lg:flex items-center gap-7 xl:gap-9 text-lead tracking-wide">
                     {navLinks.map((link) => (
                         <NavItem
                             key={link.key}
