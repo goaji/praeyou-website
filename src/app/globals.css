@@ -22,3 +22,16 @@ body {
   color: var(--color-ink);
   font-family: var(--font-sans);
 }
+
+/* The header is fixed, so anchor jumps (e.g. /#kontakt) and keyboard focus
+   would land underneath it. Keep this equal to the header's height:
+   logo h-20 / lg:h-24 plus py-4. */
+html {
+  scroll-padding-top: 7rem;
+}
+
+@media (min-width: 64rem) {
+  html {
+    scroll-padding-top: 8rem;
+  }
+}
