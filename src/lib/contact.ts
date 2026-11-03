@@ -39,3 +39,6 @@ export const bookingMessage = (massageName?: string) =>
     massageName
         ? `Hallo, ich möchte gerne einen Termin für ${massageName} anfragen.`
         : "Hallo, ich möchte gerne einen Termin anfragen.";
+
+/** Short payment line shown under the prices. The full text is on /vor-der-behandlung. */
+export const paymentNote = "Zahlung vor Ort in bar oder per PayPal – Kartenzahlung ist derzeit nicht möglich.";

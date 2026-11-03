@@ -7,6 +7,7 @@ import { CONTAINER, PAGE_TOP_LG } from "@/lib/layout";
 import { Divider } from "./PageTitle";
 import { massagePath, routes } from "@/lib/routes";
 import { MEDIA_MIN_LG } from "@/lib/breakpoints";
+import PaymentNote from "./PaymentNote";
 
 type MassageDetailsProps = {
     massage: AvailableMassage;
@@ -59,6 +60,7 @@ export default function MassageDetails({ massage, others }: MassageDetailsProps)
                             </li>
                         ))}
                     </ul>
+                    <PaymentNote className="-mt-3 mb-8" />
 
                     {massage.closing && (
                         <p className="italic text-[17px] text-center text-ink mb-8">{massage.closing}</p>

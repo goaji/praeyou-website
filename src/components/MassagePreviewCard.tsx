@@ -54,9 +54,11 @@ export default function MassagePreviewCard({ massage }: { massage: Massage }) {
                 {massage.subtitle}
             </p>
 
-            <p className="m-0 mb-3.5 text-[15px] text-ink leading-relaxed px-5">
-                {massage.desc}
-            </p>
+            <div className="mb-3.5 text-[15px] text-ink leading-relaxed px-5 flex flex-col gap-2">
+                {massage.desc.map((paragraph) => (
+                    <p className="m-0" key={paragraph}>{paragraph}</p>
+                ))}
+            </div>
 
             <div className="flex flex-col gap-1 mb-3.5 px-5 text-[15px] text-ink">
                 {!massage.comingSoon && massage.options.map((option) => (

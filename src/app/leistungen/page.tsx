@@ -4,6 +4,7 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import PageTitle from "@/components/PageTitle";
 import { CONTAINER, PAGE_TOP } from "@/lib/layout";
+import PaymentNote from "@/components/PaymentNote";
 
 export default function LeistungenPage() {
   return (
@@ -22,6 +23,9 @@ export default function LeistungenPage() {
           {massages.map((m) => (
             <MassagePreviewCard key={m.slug} massage={m} />
           ))}
+        </div>
+        <div className={`${CONTAINER} flex justify-center pt-4 lg:pt-12`}>
+          <PaymentNote />
         </div>
       </main>
       <Footer />

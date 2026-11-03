@@ -68,11 +68,16 @@ export default function ContactSection() {
                     <h2 className="font-serif font-medium text-3xl sm:text-4xl my-4 text-ink">
                         Zeit für dich <em className="italic">reservieren</em>.
                     </h2>
-                    <p className="text-olive leading-relaxed mb-7 max-w-105">
-                        Ruf mich an oder schreib mir per WhatsApp. Während einer
-                        Behandlung kann ich nicht ans Telefon gehen – ich melde mich aber
-                        so schnell wie möglich zurück.
-                    </p>
+                    <div className="text-olive leading-relaxed mb-7 max-w-105 flex flex-col gap-3">
+                        <p>
+                            Du möchtest einen Termin vereinbaren oder hast noch Fragen? Dann ruf mich
+                            gerne an oder schreib mir per WhatsApp oder E-Mail.
+                        </p>
+                        <p>
+                            Falls ich tagsüber nicht ans Telefon gehen kann, melde ich mich am späten
+                            Nachmittag oder Abend bei dir zurück.
+                        </p>
+                    </div>
                     <BeforeTreatmentLink className="mb-7" />
                     <address className="not-italic text-[15px] text-ink">
                         <span className="block text-[11px] tracking-widest uppercase text-olive mb-1">Adresse</span>
