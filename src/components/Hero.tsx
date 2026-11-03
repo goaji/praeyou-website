@@ -4,6 +4,7 @@ import { MotionConfig, motion } from "framer-motion";
 import Image from "next/image";
 import Header from "./Header";
 import Button from "./Button";
+import WomenOnlyBadge from "./WomenOnlyBadge";
 import { routes } from "@/lib/routes";
 
 const heroParagraphs = [
@@ -21,6 +22,10 @@ const HEADLINE_WORD_GAP = 1.5;
 
 // Seconds between "zuerst." and the button starting to fade in
 const BUTTON_GAP = 1.5;
+
+// When the button (and the "Exklusiv für Frauen" badge with it) starts to fade in
+const BUTTON_DELAY =
+  heroParagraphs.length * PARAGRAPH_STAGGER + HEADLINE_WORD_GAP + BUTTON_GAP;
 
 // Each hero photo needs its own colour treatment. Switch HERO_PHOTO to try the other one.
 const heroPhotos = {
@@ -97,6 +102,15 @@ export default function Hero() {
                 "radial-gradient(ellipse at center, rgba(36,20,12,0.4) 0%, rgba(36,20,12,0.15) 55%, rgba(36,20,12,0) 75%)",
             }}
           />
+          {/* Sits at the top, but fades in last, together with the button */}
+          <motion.div
+            className="mb-10"
+            initial={{ opacity: 0, y: 14 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 2, ease: "easeOut", delay: BUTTON_DELAY }}
+          >
+            <WomenOnlyBadge className="shadow-[0_4px_20px_rgba(0,0,0,0.35)]" />
+          </motion.div>
           <div
             className="max-w-2xl mb-7 space-y-4 text-[17px] sm:text-[21px] leading-relaxed text-white"
             style={{ textShadow: "0 2px 10px rgba(0,0,0,0.55)" }}
@@ -150,10 +164,7 @@ export default function Hero() {
           transition={{
             duration: 2,
             ease: "easeOut",
-            delay:
-              heroParagraphs.length * PARAGRAPH_STAGGER +
-              HEADLINE_WORD_GAP +
-              BUTTON_GAP,
+            delay: BUTTON_DELAY,
           }}
         >
           <Button

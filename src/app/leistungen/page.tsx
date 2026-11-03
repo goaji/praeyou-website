@@ -5,6 +5,7 @@ import Footer from "@/components/Footer";
 import PageTitle from "@/components/PageTitle";
 import { CONTAINER, PAGE_TOP } from "@/lib/layout";
 import PaymentNote from "@/components/PaymentNote";
+import WomenOnlyBadge from "@/components/WomenOnlyBadge";
 
 export default function LeistungenPage() {
   return (
@@ -15,6 +16,7 @@ export default function LeistungenPage() {
           className={`${CONTAINER} flex flex-col items-center text-center pb-8 lg:pb-5`}
         >
           <PageTitle align="center">Massagen</PageTitle>
+          <WomenOnlyBadge className="mt-2 mb-6" />
         </section>
         {/* Cards are subgrids (see MassagePreviewCard); only the column count changes per breakpoint */}
         <div

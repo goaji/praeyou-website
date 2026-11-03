@@ -20,7 +20,7 @@ export const metadata: Metadata = {
     // Pages only set their own name, e.g. "Impressum" → "Impressum – PräYou"
     template: `%s – ${BRAND}`,
   },
-  description: "Massage & Prävention",
+  description: "Massage & Prävention in Grafenau – exklusiv für Frauen.",
 };
 
 export default function RootLayout({
