@@ -46,7 +46,7 @@ const heroPhotos = {
     warmTint: false,
   },
 };
-const HERO_PHOTO: keyof typeof heroPhotos = "room";
+const HERO_PHOTO: keyof typeof heroPhotos = "treatment";
 const heroPhoto = heroPhotos[HERO_PHOTO];
 
 export default function Hero() {
