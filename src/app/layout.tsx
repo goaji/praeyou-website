@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Cormorant_Garamond, Lora, Work_Sans } from "next/font/google";
 import "./globals.css";
 import { BRAND } from "@/lib/contact";
+import FirstPageTracker from "@/components/FirstPageTracker";
 
 const cormorant = Cormorant_Garamond({
   subsets: ["latin"], weight: ["500", "600"], variable: "--font-serif",
@@ -33,7 +34,10 @@ export default function RootLayout({
       lang="de"
       className={`${cormorant.variable} ${workSans.variable} ${lora.variable} h-full antialiased`}
     >
-      <body className="min-h-full flex flex-col">{children}</body>
+      <body className="min-h-full flex flex-col">
+        <FirstPageTracker />
+        {children}
+      </body>
     </html>
   );
 }

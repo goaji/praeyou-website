@@ -1,7 +1,9 @@
 "use client";
 
-import { MotionConfig, motion } from "framer-motion";
+import { MotionConfig, motion, useReducedMotion, type Transition } from "framer-motion";
 import Image from "next/image";
+import { useState } from "react";
+import { cameFromInsideSite } from "@/lib/firstPage";
 import Header from "./Header";
 import Button from "./Button";
 import WomenOnlyBadge from "./WomenOnlyBadge";
@@ -48,6 +50,19 @@ const HERO_PHOTO: keyof typeof heroPhotos = "room";
 const heroPhoto = heroPhotos[HERO_PHOTO];
 
 export default function Hero() {
+  // The fade-in plays only when the homepage is the first page of the visit.
+  // Coming back from another page of the site, everything is shown straight away
+  // (initial={false} starts motion elements in their final state).
+  const [fadeFrom] = useState(() =>
+    cameFromInsideSite() ? false : { opacity: 0, y: 14 },
+  );
+
+  // "Reduce motion" system setting: show everything at once, without the slow fade-in.
+  // (MotionConfig's reducedMotion only removes the slide, the fades and their delays would stay.)
+  const reduceMotion = useReducedMotion();
+  const fade = (transition: Transition): Transition =>
+    reduceMotion ? { duration: 0 } : transition;
+
   return (
     // reducedMotion="user": respects the visitor's "reduce motion" system setting
     <MotionConfig reducedMotion="user">
@@ -105,9 +120,9 @@ export default function Hero() {
           {/* Sits at the top, but fades in last, together with the button */}
           <motion.div
             className="mb-10"
-            initial={{ opacity: 0, y: 14 }}
+            initial={fadeFrom}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 2, ease: "easeOut", delay: BUTTON_DELAY }}
+            transition={fade({ duration: 2, ease: "easeOut", delay: BUTTON_DELAY })}
           >
             <WomenOnlyBadge className="shadow-[0_4px_20px_rgba(0,0,0,0.35)]" />
           </motion.div>
@@ -118,13 +133,13 @@ export default function Hero() {
             {heroParagraphs.map((text, i) => (
               <motion.p
                 key={i}
-                initial={{ opacity: 0, y: 14 }}
+                initial={fadeFrom}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{
+                transition={fade({
                   duration: 2,
                   ease: "easeOut",
                   delay: i * PARAGRAPH_STAGGER,
-                }}
+                })}
               >
                 {text}
               </motion.p>
@@ -141,15 +156,15 @@ export default function Hero() {
               <motion.span
                 key={word}
                 className="inline-block"
-                initial={{ opacity: 0, y: 14 }}
+                initial={fadeFrom}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{
+                transition={fade({
                   duration: 2.5,
                   ease: "easeOut",
                   delay:
                     heroParagraphs.length * PARAGRAPH_STAGGER +
                     i * HEADLINE_WORD_GAP,
-                }}
+                })}
               >
                 {word}
                 {i === 0 && " "}
@@ -159,13 +174,13 @@ export default function Hero() {
         </div>
         <motion.div
           className="relative z-10 flex justify-center pt-8 pb-10 sm:pb-14"
-          initial={{ opacity: 0, y: 14 }}
+          initial={fadeFrom}
           animate={{ opacity: 1, y: 0 }}
-          transition={{
+          transition={fade({
             duration: 2,
             ease: "easeOut",
             delay: BUTTON_DELAY,
-          }}
+          })}
         >
           <Button
             buttonText="Mehr erfahren"
