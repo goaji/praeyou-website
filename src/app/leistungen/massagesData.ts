@@ -114,8 +114,7 @@ export const massages: Massage[] = [
     ],
     closing: "Für ein Gefühl von Leichtigkeit, einen gelösten Oberkörper und einen frischen Ausdruck.",
     imagePreview: "/massages/praerelease_preview.jpg",
-    // Placeholder: not shown while comingSoon. Replace with a 4:5 portrait before going live.
-    image: "/massages/praerelease_preview.jpg",
+    image: "/massages/praerelease.jpg",
     comingSoon: true,
   },
 ];

@@ -33,7 +33,7 @@ export default function MassagePreviewCard({ massage }: { massage: Massage }) {
                     alt={massage.name}
                     fill
                     sizes={`${MEDIA_MIN_LG} 33vw, ${MEDIA_MIN_SM} 50vw, 100vw`}
-                    className={`object-cover ${isComingSoon ? "grayscale-[60%] opacity-70" : ""}`}
+                    className="object-cover"
                 />
                 {isComingSoon && (
                     <div className="absolute inset-0 flex items-center justify-center">

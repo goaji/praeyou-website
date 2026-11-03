@@ -128,14 +128,6 @@ export default function VorDerBehandlungPage() {
         </p>
       </TextSection>
 
-      <TextSection heading="Zahlungsmöglichkeiten">
-        <p>
-          Du kannst deine Massage vor Ort ganz bequem in bar oder per PayPal
-          bezahlen. Bitte beachte, dass eine Kartenzahlung derzeit nicht möglich
-          ist.
-        </p>
-      </TextSection>
-
       <aside className="rounded-md bg-leaf/40 px-6 py-5">
         <p className="font-serif italic text-2xl text-red mb-1">Du zuerst.</p>
         <p>
@@ -143,6 +135,14 @@ export default function VorDerBehandlungPage() {
           gesamten Behandlung im Mittelpunkt.
         </p>
       </aside>
+
+      <TextSection heading="Zahlungsmöglichkeiten">
+        <p>
+          Du kannst deine Massage vor Ort ganz bequem in bar oder per PayPal
+          bezahlen. Bitte beachte, dass eine Kartenzahlung derzeit nicht möglich
+          ist.
+        </p>
+      </TextSection>
     </TextPage>
   );
 }

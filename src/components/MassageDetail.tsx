@@ -60,11 +60,10 @@ export default function MassageDetails({ massage, others }: MassageDetailsProps)
                             </li>
                         ))}
                     </ul>
-                    <PaymentNote className="-mt-3 mb-8" />
-
                     {massage.closing && (
                         <p className="italic text-[17px] text-center text-ink mb-8">{massage.closing}</p>
                     )}
+                    <PaymentNote className="mb-8" />
                     <div className="flex justify-center">
                         <Button size="medium" buttonText="Termin anfragen" link={routes.kontakt} buttonStyle="onLightBackground" hoverStyle="oliveFill" />
                     </div>
