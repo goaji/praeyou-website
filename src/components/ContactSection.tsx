@@ -101,7 +101,9 @@ export default function ContactSection() {
                                 </span>
                                 <span className="flex flex-col min-w-0">
                                     <span className="text-label tracking-widest uppercase text-olive">{channel.label}</span>
-                                    <span className="text-lead text-ink truncate">{channel.value}</span>
+                                    <span className="text-lead text-ink wrap-anywhere">{channel.value}</span>
+                                    {/* Opens WhatsApp in a new tab: say so to screen readers, as the seal link on Über mich does */}
+                                    {channel.external && <span className="sr-only"> (öffnet in einem neuen Tab)</span>}
                                 </span>
                                 <span className="ml-auto text-olive" aria-hidden="true">→</span>
                             </a>

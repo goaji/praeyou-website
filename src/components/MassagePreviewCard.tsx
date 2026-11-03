@@ -30,7 +30,7 @@ export default function MassagePreviewCard({ massage }: { massage: Massage }) {
             <LinkIfAvailable href={href} className="relative block overflow-hidden aspect-3/2" tabIndex={-1} aria-hidden="true">
                 <Image
                     src={massage.imagePreview}
-                    alt={massage.name}
+                    alt="" // decorative: the whole image link is hidden from screen readers anyway
                     fill
                     sizes={`${MEDIA_MIN_LG} 33vw, ${MEDIA_MIN_SM} 50vw, 100vw`}
                     className="object-cover"

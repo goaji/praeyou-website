@@ -12,7 +12,8 @@ type NavItemProps = {
 
 function getNavItemClasses(variant: NavItemProps["variant"], isActive: boolean, onDark: boolean) {
     if (variant === "mobile") {
-        return `block py-3 text-xl tracking-wide border-b border-ink/5 ${isActive ? "text-red" : "text-ink"}`;
+        // The current page is underlined, not only red, so it is visible without telling colours apart (as on desktop)
+        return `block py-3 text-xl tracking-wide border-b border-ink/5 ${isActive ? "text-red underline decoration-red underline-offset-8" : "text-ink"}`;
     }
     if (isActive) {
         return "whitespace-nowrap text-red border-b border-red pb-0.5";

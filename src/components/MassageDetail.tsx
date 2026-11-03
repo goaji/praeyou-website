@@ -24,7 +24,7 @@ export default function MassageDetails({ massage, others }: MassageDetailsProps)
                 <div className="relative overflow-hidden aspect-[16/10] sm:aspect-[2/1] lg:aspect-auto">
                     <Image
                         src={massage.image}
-                        alt={massage.name}
+                        alt="" // decorative: the name, description and prices are all in the text beside it
                         fill
                         sizes={`${MEDIA_MIN_LG} 50vw, 100vw`}
                         className="object-cover"

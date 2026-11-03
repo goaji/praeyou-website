@@ -43,18 +43,19 @@ const buttonStyles: { [key: string]: ButtonStylesType } = {
     },
 };
 
+// Each hover class has a focus-visible twin, so keyboard users see the same change as mouse users.
 const hoveredButtonStyles: { [key: string]: HoveredButtonStylesType } = {
     oliveFill: {
-        hoverTextColor: "hover:text-cream",
-        hoverBackgroundColor: "hover:bg-olive",
+        hoverTextColor: "hover:text-cream focus-visible:text-cream",
+        hoverBackgroundColor: "hover:bg-olive focus-visible:bg-olive",
         hoverBorder: "hover:border-olive",
         textColor: "text-cream",
         backgroundColor: "bg-olive",
         border: "border-olive",
     },
     redFill: {
-        hoverTextColor: "hover:text-cream",
-        hoverBackgroundColor: "hover:bg-red",
+        hoverTextColor: "hover:text-cream focus-visible:text-cream",
+        hoverBackgroundColor: "hover:bg-red focus-visible:bg-red",
         hoverBorder: "hover:border-red",
         textColor: "text-cream",
         backgroundColor: "bg-red",
@@ -88,7 +89,7 @@ export default function Button({ buttonText, link, size = "medium", buttonStyle,
             className={`self-start tracking-wide rounded-full no-underline transition-colors ${sizeClasses[size]}
             ${textColor}  ${backgroundColor} border ${border} 
             ${hoveredBackgroundColor} 
-            ${hoveredTextColor} hover:font-bold`}
+            ${hoveredTextColor} hover:font-bold focus-visible:font-bold`}
         >
             {/* An invisible bold copy reserves the bold width, so the button doesn't grow (and push its neighbours) on hover */}
             <span className="inline-grid justify-items-center">
