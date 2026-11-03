@@ -22,6 +22,26 @@ const HEADLINE_WORD_GAP = 1.5;
 // Seconds between "zuerst." and the button starting to fade in
 const BUTTON_GAP = 1.5;
 
+// Each hero photo needs its own colour treatment. Switch HERO_PHOTO to try the other one.
+const heroPhotos = {
+  // The original treatment photo: cool grey-green, so it gets warmed up.
+  treatment: {
+    src: "/heroImage.jpeg",
+    alt: "Massagebehandlung",
+    filter: "url(#hero-highlights) saturate(1.25) sepia(0.06) contrast(1.12)",
+    warmTint: true,
+  },
+  // The treatment room: already warm, so no terracotta tint, only a little extra colour.
+  room: {
+    src: "/heroImage-room.jpg",
+    alt: "Behandlungsraum mit Massageliege",
+    filter: "url(#hero-highlights) saturate(1.1) contrast(1.08)",
+    warmTint: false,
+  },
+};
+const HERO_PHOTO: keyof typeof heroPhotos = "room";
+const heroPhoto = heroPhotos[HERO_PHOTO];
+
 export default function Hero() {
   return (
     // reducedMotion="user": respects the visitor's "reduce motion" system setting
@@ -41,21 +61,23 @@ export default function Hero() {
           </filter>
         </svg>
         <Image
-          src="/heroImage.jpeg"
-          alt="Massagebehandlung"
+          src={heroPhoto.src}
+          alt={heroPhoto.alt}
           className="object-cover z-0"
-          style={{ filter: "url(#hero-highlights) saturate(1.25) sepia(0.06) contrast(1.12)" }}
+          style={{ filter: heroPhoto.filter }}
           fill
         />
-        {/* Terracotta tint: warms up the grey-green tones of the photo */}
-        <div
-          className="absolute inset-0 z-1"
-          style={{
-            background: "var(--color-red)",
-            mixBlendMode: "soft-light",
-            opacity: 0.6,
-          }}
-        />
+        {heroPhoto.warmTint && (
+          // Terracotta tint: warms up the grey-green tones of the treatment photo
+          <div
+            className="absolute inset-0 z-1"
+            style={{
+              background: "var(--color-red)",
+              mixBlendMode: "soft-light",
+              opacity: 0.6,
+            }}
+          />
+        )}
         <div
           className="absolute inset-0 z-1"
           style={{
