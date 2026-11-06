@@ -1,0 +1,35 @@
+1:"$Sreact.fragment"
+2:"static/chunks/app/layout-962d6965b64f4180.js"
+3:I[3106,["177","$2"],"default"]
+4:I[8172,[],""]
+5:I[7210,[],""]
+c:"static/chunks/13-01ca443ca1478b07.js"
+d:"static/chunks/app/uber/page-2600032ee0cb68bf.js"
+e:I[9375,["13","$c","399","$d"],"default"]
+f:I[21,["13","$c","399","$d"],"Image"]
+13:"ViewportBoundary"
+14:I[8937,[],"$13"]
+15:"MetadataBoundary"
+16:I[8937,[],"$15"]
+17:"$Sreact.suspense"
+18:I[556,[],"IconMark"]
+:HL["/_next/static/css/e03f1a80c351165c.css","style"]
+7:X
+a:X
+a:C
+b:[["children",{"s":"__PAGE__","h":160,"d":{"r":["$","$1","c",{"children":[["$","div",null,{"className":"bg-cream text-ink","children":[["$","$Le",null,{"background":"light","activeLink":"uber"}],["$","main",null,{"className":"max-w-7xl mx-auto px-5 sm:px-8 lg:px-14 pt-32 lg:pt-40 pb-20","children":["$","div",null,{"className":"flex flex-col max-w-xl mx-auto","children":[["$","div",null,{"className":"flex flex-col gap-3 mb-6 items-start","children":[["$","h1",null,{"className":"font-serif font-bold text-3xl sm:text-4xl","children":"Über mich"}],["$","div",null,{"className":"w-11 h-px bg-olive/50 ","aria-hidden":"true"}]]}],["$","div",null,{"className":"flex flex-col text-body leading-relaxed gap-4 ","children":[["$","blockquote",null,{"className":"font-serif italic text-2xl leading-snug text-olive","children":"„In der Ruhe entsteht oft das, was im Alltag verloren geht: die Verbindung zu uns selbst, innere Klarheit und die Erinnerung daran, wie wertvoll wir sind.“"}],["$","div",null,{"className":"relative w-full max-w-sm aspect-2/3 my-4 overflow-hidden rounded-md","children":["$","$Lf",null,{"src":"/about/tina.jpg","alt":"Tina, Gründerin von PräYou","fill":true,"sizes":"(min-width: 640px) 384px, 100vw","className":"object-cover","fetchPriority":"high"}]}],["$","p",null,{"children":"Ich bin Tina, Fachpraktikerin für Wellness und Prävention und Gründerin von PräYou."}],["$","p",null,{"children":"In meiner Freizeit bin ich gerne in Bewegung – ob auf dem Rennrad, beim Spinning, Krafttraining, Yoga oder draußen in den Bergen. Genauso genieße ich gemütliche Abende mit Freunden und gutes Essen."}],["$","p",null,{"children":"Besonders fasziniert mich der menschliche Körper - wie alles miteinander zusammenhängt und was wir selbst dazu beitragen können, auch in einem oft hektischen und fordernden Alltag gesund und ausgeglichen zu bleiben."}],["$","p",null,{"children":"Genau diese Begeisterung für Bewegung, Entspannung und Prävention steckt auch in PRÄYou."}],["$","div",null,{"className":"mt-4 flex flex-col gap-1","children":["$","p",null,{"className":"font-serif text-2xl text-red","children":"PräYou – Du zuerst."}]}]]}],["$","a",null,{"href":"https://www.fachpraktiker.de/?siegel","target":"_blank","rel":"noopener noreferrer","className":"mt-10 self-start","aria-label":"Zertifiziert von der DAfMP (öffnet fachpraktiker.de in einem neuen Tab)","children":["$","$Lf",null,{"src":"/about/dafmp-siegel.png","alt":"Zertifiziert von der DAfMP","width":120,"height":135}]}]]}]}],["$","footer",null,{"className":"text-caption text-cream bg-olive py-4","children":"$L10"}]]}],null,"$L11"]}],"p":"$@12","v":null,"s":"$7"}}]]
+8:[["children",{"s":"uber","h":96,"d":{"r":["$","$1","c",{"children":[null,["$","$L4",null,{"parallelRouterKey":"children","template":["$","$L5",null,{}]}]]}],"p":"$@9","v":"$a","s":"$7"},"c":"$Qb"}]]
+0:{"t":{"t":{"s":"","h":80,"d":{"r":["$","$1","c",{"children":[[["$","link","0",{"rel":"stylesheet","href":"/_next/static/css/e03f1a80c351165c.css","precedence":"next"}]],["$","html",null,{"lang":"de","className":"__variable_fbc23e __variable_daa849 __variable_7880b6 h-full antialiased","children":["$","body",null,{"className":"min-h-full flex flex-col","children":[["$","$L3",null,{}],["$","$L4",null,{"parallelRouterKey":"children","template":["$","$L5",null,{}],"notFound":[[["$","title",null,{"children":"404: This page could not be found."}],["$","div",null,{"style":{"fontFamily":"system-ui,\"Segoe UI\",Roboto,Helvetica,Arial,sans-serif,\"Apple Color Emoji\",\"Segoe UI Emoji\"","height":"100vh","textAlign":"center","display":"flex","flexDirection":"column","alignItems":"center","justifyContent":"center"},"children":["$","div",null,{"children":[["$","style",null,{"dangerouslySetInnerHTML":{"__html":"body{color:#000;background:#fff;margin:0}.next-error-h1{border-right:1px solid rgba(0,0,0,.3)}@media (prefers-color-scheme:dark){body{color:#fff;background:#000}.next-error-h1{border-right:1px solid rgba(255,255,255,.3)}}"}}],["$","h1",null,{"className":"next-error-h1","style":{"display":"inline-block","margin":"0 20px 0 0","padding":"0 23px 0 0","fontSize":24,"fontWeight":500,"verticalAlign":"top","lineHeight":"49px"},"children":404}],["$","div",null,{"style":{"display":"inline-block"},"children":["$","h2",null,{"style":{"fontSize":14,"fontWeight":400,"lineHeight":"49px","margin":0},"children":"This page could not be found."}]}]]}]}]],[]]}]]}]}]]}],"p":"$@6","v":null,"s":"$7"},"c":"$Q8"},"h":{"r":["$","$1","h",{"children":[null,["$","$L14",null,{"children":[["$","meta","0",{"charSet":"utf-8"}],["$","meta","1",{"name":"viewport","content":"width=device-width, initial-scale=1"}]]}],["$","$L16",null,{"children":[["$","div",null,{"hidden":true,"children":["$","$17",null,{"name":"Next.Metadata","children":[["$","title","0",{"children":"Über mich – PräYou"}],["$","meta","1",{"name":"description","content":"Massage & Prävention in Grafenau – exklusiv für Frauen."}],["$","link","2",{"rel":"icon","href":"/favicon.ico?603d046c9a6fdfbb","type":"image/x-icon","sizes":"16x16"}],["$","$L18","3",{}]]}]}],null]}],["$","meta",null,{"name":"next-size-adjust","content":""}]]}],"p":"$@19","v":null,"s":"$7"}},"a":"$@1a","u":"$@1b","b":"HBWM4yPU8zvfbMFECa5oZ"}
+1c:I[3549,["13","$c","399","$d"],""]
+1d:I[8937,[],"OutletBoundary"]
+10:["$","div",null,{"className":"max-w-7xl mx-auto px-5 sm:px-8 lg:px-14 flex flex-col sm:flex-row items-center justify-between gap-5 text-center sm:text-left","children":[["$","div",null,{"className":"flex flex-col sm:flex-row items-center gap-3 sm:gap-4","children":[["$","$Lf",null,{"src":"/logo-footer.svg","alt":"Präyou","width":930,"height":934,"className":"h-20 lg:h-24 w-auto"}],["$","p",null,{"className":"m-0","children":["© 2026 ","PräYou – Massage und Prävention"]}]]}],["$","nav",null,{"aria-label":"Weitere Seiten","className":"flex flex-wrap items-center justify-center gap-x-6 gap-y-2","children":[["$","$L1c",null,{"href":"/vor-der-behandlung","className":"hover:underline underline-offset-4","children":"Hinweise"}],["$","$L1c",null,{"href":"/impressum","className":"hover:underline underline-offset-4","children":"Impressum"}],["$","$L1c",null,{"href":"/datenschutz","className":"hover:underline underline-offset-4","children":"Datenschutz"}]]}]]}]
+11:["$","$L1d",null,{"children":["$","$17",null,{"name":"Next.MetadataOutlet","children":"$@1e"}]}]
+7:300
+1e:null
+1b:true
+7:C
+1a:0
+9:"$undefined"
+6:"$undefined"
+19:"$undefined"
+12:"$undefined"

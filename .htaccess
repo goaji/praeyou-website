@@ -1,0 +1,9 @@
+# Apache settings for the static site (copied into out/ by `next build`).
+
+# Show the site's own "not found" page.
+ErrorDocument 404 /404.html
+
+# Always use HTTPS.
+RewriteEngine On
+RewriteCond %{HTTPS} off
+RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
