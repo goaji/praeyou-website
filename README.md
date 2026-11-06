@@ -38,10 +38,15 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 
 ```bash
 npm run dev      # start the development server
-npm run build    # build for production
-npm run start    # run the production build
+npm run build    # build the static site into out/
 npm run lint     # lint the project
 ```
+
+## Deployment
+
+The site is a static export (`output: "export"` in `next.config.ts`): `npm run build` writes plain HTML/CSS/JS into `out/`, with no Node.js server needed.
+
+On every push to `main`, the GitHub Action in `.github/workflows/build.yml` lints and builds the site and commits the contents of `out/` to the `deploy` branch. Hostinger's Git deployment pulls the `deploy` branch into `public_html`. Never edit the `deploy` branch by hand.
 
 ## Notes
 

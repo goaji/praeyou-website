@@ -1,0 +1,52 @@
+# Builds the static site on every push to main and commits the result to the `deploy` branch.
+# Hostinger's Git deployment pulls the `deploy` branch into public_html.
+name: Build website
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch: # allows starting a build by hand from the Actions tab
+
+permissions:
+  contents: write # needed to push to the deploy branch
+
+concurrency:
+  group: deploy
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+          cache: npm
+
+      - run: npm ci
+      - run: npm run lint
+      - run: npm run build
+
+      # The deploy branch holds exactly the contents of out/ (including .htaccess).
+      # Each build is a new commit on top of the previous one, so Hostinger can always pull it.
+      # Files no longer in out/ are removed from the branch.
+      - name: Commit out/ to the deploy branch
+        working-directory: out
+        env:
+          REPO_URL: https://x-access-token:${{ github.token }}@github.com/${{ github.repository }}.git
+        run: |
+          git init -q -b deploy
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          if git fetch -q "$REPO_URL" deploy; then
+            git reset -q --soft FETCH_HEAD
+          fi
+          git add -A
+          if git diff --cached --quiet; then
+            echo "No changes to deploy."
+            exit 0
+          fi
+          git commit -q -m "Build of ${GITHUB_SHA::7}"
+          git push -q "$REPO_URL" deploy
